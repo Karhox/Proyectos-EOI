@@ -81,6 +81,8 @@ public class HolaMundo {
 		int resultado3 = (7+4)/(2); //5, si pones aquí 2.0 da error
 		System.out.println(resultado3);
 		
+		System.out.println(12==6);
+		
 		//en caso de estar usando variables
 		int dos=2;
 		int tres=3;
@@ -136,6 +138,41 @@ public class HolaMundo {
 		sc.close(); //Cierra el escaner, el colector de basura hace eso si no lo pones, si se queda abierto consume ram
 	}
 		
+	private static void comparaciones() {
+		int a= 1;
+		int b= 2;
+		double c= 1.0;
+			
+		String cad1="hola";
+		String cad2="adiós";
+		String cad3="Hola";
+		
+		System.out.println(a==b);
+		System.out.println(a<b);
+		System.out.println(a>b);
+		System.out.println(a==c); //True porque pasa int a double
+		
+		//Las cadenas no se pueden comparar con == -> System.out.println(cad1==cad2);
+		System.out.println(cad1.equals(cad2));
+		System.out.println(cad1.equals(cad3));//Distingue mayúsculas y minúsculas
+		
+		Scanner sc = new Scanner(System.in);
+		String usu1= "Karhox";
+		String con1= "123K";
+		
+		System.out.println("Introduce nombre de usuario: ");
+		String usu2 =sc.nextLine();
+		System.out.println(usu1.equals(usu2));
+		System.out.println(usu1.equalsIgnoreCase(usu2)); //Ignora mayúsculas y minúsculas
+		
+	
+		System.out.println("Introduce contraseña: ");
+		String con2 =sc.nextLine();
+		System.out.println(con1.equals(con2));
+		System.out.println(con1.equalsIgnoreCase(con2));
+		
+	}
+	
 	private static void ejercicio1() {
 			
 		System.out.println( "El resultado de 36 + 27 es: " + (36 + 27));
@@ -153,8 +190,7 @@ public class HolaMundo {
 	}
 
 	private static void ejercicio4() {
-
-				
+	
 		double n1= 1;
 		double n2= 3;
 		double n3= 7;
@@ -286,7 +322,6 @@ public class HolaMundo {
 	}
 	
 	private static void ejercicio15() {
-
 		
 		Scanner sc1 = new Scanner (System.in);
 		System.out.println("Nombre del primer producto: ");
@@ -340,14 +375,16 @@ public class HolaMundo {
 		
 		//usar \n\t para salto de linea y tab
 	}
+
 	
 	public static void main(String[] args) {
 
 			//iniciacion();
 			//conversiones();
+			comparaciones();
 			//ejercicio1();
 			//ejercicio2();
-			ejercicio4();
+			//ejercicio4();
 			//ejercicio5();
 			//ejercicio6();
 			//ejercicio7();
