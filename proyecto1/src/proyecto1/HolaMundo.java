@@ -343,7 +343,7 @@ public class HolaMundo {
 	
 		public static void main(String[] args) {
 
-			//iniciacion();
+			iniciacion();
 			//conversiones();
 			//ejercicio1();
 			//ejercicio2();
@@ -361,7 +361,7 @@ public class HolaMundo {
 			//ejercicio15();
 			//ejercicio20();
 			//ejercicio21();
-			//Dios dime que esto se sincroniza
+			
 	}
 	
 }
