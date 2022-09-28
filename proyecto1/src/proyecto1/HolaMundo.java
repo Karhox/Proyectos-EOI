@@ -154,7 +154,7 @@ public class HolaMundo {
 		
 		//Las cadenas no se pueden comparar con == -> System.out.println(cad1==cad2);
 		System.out.println(cad1.equals(cad2));
-		System.out.println(cad1.equals(cad3));//Distingue mayúsculas y minúsculas
+		System.out.println(cad1.equals(cad3));//Distingue mayúsculas y minúsculas 
 		
 		Scanner sc = new Scanner(System.in);
 		String usu1= "Karhox";
@@ -170,6 +170,47 @@ public class HolaMundo {
 		String con2 =sc.nextLine();
 		System.out.println(con1.equals(con2));
 		System.out.println(con1.equalsIgnoreCase(con2));
+		
+		//Tabla de verdad
+		
+		System.out.println(usu1.equalsIgnoreCase(usu2) && con1.equalsIgnoreCase(con2)); //true si acierta los dos I lógico
+		System.out.println(usu1.equalsIgnoreCase(usu2) || con1.equalsIgnoreCase(con2)); //true si acierta una O lógico
+		System.out.println(usu1.equalsIgnoreCase(usu2)); //Devuelve el resultado de la condición, si acierta es true
+		System.out.println(!usu1.equalsIgnoreCase(usu2)); //Devuelve lo contrario; Si acierta es false NO lógico
+		
+	}
+	
+	private static void formateo() {
+		String nombre1 = "Paco";
+		String nombre2 = "Anastasia"; 
+		double salario1 = 20300.24; 
+		double salario2 = 24439.6;
+		//1
+		System.out.println("      NOMBRE       SALARIO"); 
+		System.out.println("    " + nombre1 + "     " + salario1); 
+		System.out.println("    " + nombre2 + "     " + salario2); 
+		System.out.println("---------------------------");
+		
+		
+		//2 Numeros negativos alinean a la izquierda
+		System.out.printf("%-12s%-14s\n", "NOMBRE", "SALARIO");
+		System.out.printf("%-12s%-14f€\n", nombre1, salario1);
+		System.out.printf("%-12s%-14f€\n", nombre2, salario2);
+		System.out.println("---------------------------");
+		
+		
+		//3 Numeros positivos alinean a la derecha
+		System.out.printf("%12s%14s\n", "NOMBRE", "SALARIO");
+		System.out.printf("%12s%14f€\n", nombre1, salario1);
+		System.out.printf("%12s%14f€\n", nombre2, salario2);
+		System.out.println("---------------------------");
+		
+		
+		//4 El punto seguido de numero señala el numero de decimales
+		System.out.printf("%12s%14s\n", "NOMBRE", "SALARIO");
+		System.out.printf("%12s%14.2f€\n", nombre1, salario1);
+		System.out.printf("%12s%14.2f€\n", nombre2, salario2);
+		System.out.println("---------------------------");
 		
 	}
 	
@@ -381,7 +422,8 @@ public class HolaMundo {
 
 			//iniciacion();
 			//conversiones();
-			comparaciones();
+			//comparaciones();
+			formateo();
 			//ejercicio1();
 			//ejercicio2();
 			//ejercicio4();
