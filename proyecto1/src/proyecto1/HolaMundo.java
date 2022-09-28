@@ -361,7 +361,7 @@ public class HolaMundo {
 			//ejercicio15();
 			//ejercicio20();
 			//ejercicio21();
-			
+			//Dios dime que esto se sincroniza
 	}
 	
 }
