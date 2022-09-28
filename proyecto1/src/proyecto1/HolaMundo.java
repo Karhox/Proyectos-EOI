@@ -218,7 +218,7 @@ public class HolaMundo {
 			
 		System.out.println( "El resultado de 36 + 27 es: " + (36 + 27));
 	}
-
+	
 	private static void ejercicio2() {
 			
 		int n1= 15;
@@ -230,6 +230,15 @@ public class HolaMundo {
 		System.out.println("El resto es " + (n1%n2));
 	}
 
+	private static void ejercicio3() {
+		
+		int a=1;
+		int b=2;
+		System.out.println(a +" Es menor que " + b + ": " + (a<b));
+		System.out.println(a +" Es igual a " + b + ": " + (a==b));
+		System.out.println(a +" Es mayor que " + b + ": " +(a>b));
+	}
+	
 	private static void ejercicio4() {
 	
 		double n1= 1;
@@ -261,24 +270,28 @@ public class HolaMundo {
 		int b=2;
 		int c=3;
 		int d=4;
-		
-		b = c;
-		System.out.println("B toma el valor de C -> B = " + b );
-		c = a;
-		System.out.println("C toma el valor de A -> C = " + c );
-		a = d;
-		System.out.println("A toma el valor de D -> A = " + a );
-		d = b;
-		System.out.println("D toma el valor de B -> D = " + d );		
+		int auxa= a;
+		int auxb= b;
+		int auxc= c;
+		int auxd=d;
+		System.out.println("Valores iniciales: A = "+ a + " B = "+ b+" C = "+ c+ " D = "+ d);
+		b = auxc;
+		System.out.println("B toma el valor de C -> B = " + b);
+		c = auxa;
+		System.out.println("C toma el valor de A -> C = " + c);
+		a = auxd;
+		System.out.println("A toma el valor de D -> A = " + a);
+		d = auxb;
+		System.out.println("D toma el valor de B -> D = " + d);		
 	}
 	
 	private static void ejercicio7() {
 		
 		char c1 = 'F';
-		char c2 = 'P';
+		char c2 = 'X';
 		System.out.println( "'" + c1 + "' tiene la posición " + (int)c1);
 		System.out.println( "'" + c2 + "' tiene la posición " + (int)c2);
-		System.out.println("Diferencia entre F y P es de " + ((int)c2 - (int)c1));
+		System.out.println("Diferencia entre "+ c1 + " y " + c2 +" es de " + (c2 - c1));
 	}
 	
 	private static void ejercicio8() {
@@ -423,12 +436,13 @@ public class HolaMundo {
 			//iniciacion();
 			//conversiones();
 			//comparaciones();
-			formateo();
+			//formateo();
 			//ejercicio1();
 			//ejercicio2();
+			//ejercicio3();
 			//ejercicio4();
 			//ejercicio5();
-			//ejercicio6();
+			ejercicio6();
 			//ejercicio7();
 			//ejercicio8();
 			//ejercicio9();
