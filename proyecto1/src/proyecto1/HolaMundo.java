@@ -341,7 +341,7 @@ public class HolaMundo {
 		//usar \n\t para salto de linea y tab
 	}
 	
-		public static void main(String[] args) {
+	public static void main(String[] args) {
 
 			iniciacion();
 			//conversiones();
