@@ -343,11 +343,11 @@ public class HolaMundo {
 	
 	public static void main(String[] args) {
 
-			iniciacion();
+			//iniciacion();
 			//conversiones();
 			//ejercicio1();
 			//ejercicio2();
-			//ejercicio4();
+			ejercicio4();
 			//ejercicio5();
 			//ejercicio6();
 			//ejercicio7();
