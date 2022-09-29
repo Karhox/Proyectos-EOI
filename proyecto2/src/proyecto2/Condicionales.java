@@ -51,6 +51,7 @@ public class Condicionales {
 		}
 		sc.close();
 	}
+	
 	public static void ternario1() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Dime tu nombre: ");
@@ -68,6 +69,7 @@ public class Condicionales {
 		sc.close();
 		
 	}
+	
 	public static void ternario2() {
 		int edad1= 4;
 		int edad2= 7;
@@ -75,6 +77,27 @@ public class Condicionales {
 		System.out.println(diferencia); // 7-4=3
 		
 	}
+
+	public static void switch1() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Dime el prefijo de tu país: ");
+		int prefijo = sc.nextInt();
+		
+		switch (prefijo) {
+		case 34:
+			System.out.println("Tu país es España");
+			break;
+		case 49:
+			System.out.println("Tu país es Alemania");
+			break;
+		default:
+			System.out.println("No sé cual es tu país...");
+			break;
+		}
+	}
+
+	
 	public static void ejemplos() {
 	
 		
@@ -83,8 +106,10 @@ public class Condicionales {
 		//ejemplosIf();
 		//ejemplosIfElse();
 		//ejemplosIfElseIf();
-		ternario1();
+		//ternario1();
 		//ternario2();
+		//switch1();
 		//ejemplos();
+	
 	}
 }
