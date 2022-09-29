@@ -1,4 +1,5 @@
 package proyecto2;
+
 import java.util.Scanner;
 
 public class Condicionales {
@@ -96,12 +97,7 @@ public class Condicionales {
 			break;
 		}
 	}
-
 	
-	public static void ejemplos() {
-	
-		
-	}
 	public static void main(String[] args) {
 		//ejemplosIf();
 		//ejemplosIfElse();
@@ -109,7 +105,7 @@ public class Condicionales {
 		//ternario1();
 		//ternario2();
 		//switch1();
-		//ejemplos();
+		
 	
 	}
 }

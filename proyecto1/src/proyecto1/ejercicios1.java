@@ -161,8 +161,7 @@ public class ejercicios1 {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("¿Cuántos años tienes?");
 		int n1 = sc.nextInt();
-		n1 = n1 + 15;
-		System.out.println("Dentro de 15 años tendrás " + n1 + " años.");
+		System.out.println("Dentro de 15 años tendrás " + (n1 + 15) + " años.");
 		sc.close();
 	}
 
@@ -235,7 +234,7 @@ public class ejercicios1 {
 		// ejercicio11();
 		// ejercicio12();
 		// ejercicio13();
-		// ejercicio14();
+		 ejercicio14();
 		// ejercicio15();
 		// ejercicio20();
 		// ejercicio21();

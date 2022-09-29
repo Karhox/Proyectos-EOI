@@ -1,4 +1,5 @@
 package proyecto2;
+
 import java.util.Scanner;
 
 public class Ejercicios2 {
@@ -40,12 +41,19 @@ public class Ejercicios2 {
 		System.out.println((c1.equals(c2))?"La contraseña es correcta":"Contraseña incorrecta");
 		sc.close();
 	}
+	
+	public static void ejercicio13() {
+		
+		for (int i = 20; i>0; i--) {
+			System.out.println(i);
+		}
+	}
 
 	public static void main(String[] args) {
 		//ejercicio2();
-		ejercicio3();
+		//ejercicio3();
 		//ejercicio4();
-		
+		ejercicio13();
 		
 	}
 }
