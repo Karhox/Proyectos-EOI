@@ -3,7 +3,7 @@ package proyecto1;
 import java.util.Scanner;
 
 public class HolaMundo {
-	
+	@SuppressWarnings("unused")
 	private static void iniciacion() {
 	
 		int variable = 10;
@@ -107,7 +107,7 @@ public class HolaMundo {
 		System.out.println( valor++ + ++valor + valor-- - --valor); //10+12+10-10 = 24 
 		System.out.println(valor); //10
 	}
-		
+	@SuppressWarnings("unused")	
 	private static void conversiones() {
 		
 		int prefijo = 34;
@@ -137,7 +137,7 @@ public class HolaMundo {
 
 		sc.close(); //Cierra el escaner, el colector de basura hace eso si no lo pones, si se queda abierto consume ram
 	}
-		
+	@SuppressWarnings("unused")	
 	private static void comparaciones() {
 		int a= 1;
 		int b= 2;
@@ -177,9 +177,9 @@ public class HolaMundo {
 		System.out.println(usu1.equalsIgnoreCase(usu2) || con1.equalsIgnoreCase(con2)); //true si acierta una O lógico
 		System.out.println(usu1.equalsIgnoreCase(usu2)); //Devuelve el resultado de la condición, si acierta es true
 		System.out.println(!usu1.equalsIgnoreCase(usu2)); //Devuelve lo contrario; Si acierta es false NO lógico
-		
+		sc.close();
 	}
-	
+	@SuppressWarnings("unused")
 	private static void formateo() {
 		String nombre1 = "Paco";
 		String nombre2 = "Anastasia"; 
@@ -217,7 +217,7 @@ public class HolaMundo {
 	public static void main(String[] args) {
 
 			//iniciacion();
-			conversiones();
+			//conversiones();
 			//comparaciones();
 			//formateo();	
 			

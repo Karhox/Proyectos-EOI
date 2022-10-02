@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class ejercicios1 {
 
+	@SuppressWarnings("unused")
 	private static void ejercicio1() {
 
 		System.out.println("El resultado de 36 + 27 es: " + (36 + 27));
 	}
-
+	@SuppressWarnings("unused")
 	private static void ejercicio2() {
 
 		int n1 = 15;
@@ -19,7 +20,7 @@ public class ejercicios1 {
 		System.out.println("15/4= " + (n1 / n2));
 		System.out.println("El resto es " + (n1 % n2));
 	}
-
+	@SuppressWarnings("unused")
 	private static void ejercicio3() {
 
 		int a = 1;
@@ -28,7 +29,7 @@ public class ejercicios1 {
 		System.out.println(a + " Es igual a " + b + ": " + (a == b));
 		System.out.println(a + " Es mayor que " + b + ": " + (a > b));
 	}
-
+	@SuppressWarnings("unused")
 	private static void ejercicio4() {
 
 		double n1 = 1;
@@ -41,7 +42,7 @@ public class ejercicios1 {
 		System.out.println((int) n4);
 		System.out.println((n1 + n2) * n3 / n4);
 	}
-
+	@SuppressWarnings("unused")
 	private static void ejercicio5() {
 
 		int n1 = 5;
@@ -53,7 +54,7 @@ public class ejercicios1 {
 		n1 *= 2;
 		System.out.println("n * 2 = " + n1);
 	}
-
+	@SuppressWarnings("unused")
 	private static void ejercicio6() {
 
 		int a = 1;
@@ -74,7 +75,7 @@ public class ejercicios1 {
 		d = auxb;
 		System.out.println("D toma el valor de B -> D = " + d);
 	}
-
+	@SuppressWarnings("unused")
 	private static void ejercicio7() {
 
 		char c1 = 'F';
@@ -83,7 +84,7 @@ public class ejercicios1 {
 		System.out.println("'" + c2 + "' tiene la posición " + (int) c2);
 		System.out.println("Diferencia entre " + c1 + " y " + c2 + " es de " + (c2 - c1));
 	}
-
+	@SuppressWarnings("unused")
 	private static void ejercicio8() {
 
 		int a = 5;
@@ -94,7 +95,7 @@ public class ejercicios1 {
 		System.out.println(a * 2);
 
 	}
-
+	@SuppressWarnings("unused")
 	private static void ejercicio9() {
 
 		Scanner sc = new Scanner(System.in);
@@ -103,7 +104,7 @@ public class ejercicios1 {
 		System.out.println("Hola " + usuario + "! Me alegro que estes de vuelta :D");
 		sc.close();
 	}
-
+	@SuppressWarnings("unused")
 	private static void ejercicio10() {
 
 		Scanner sc = new Scanner(System.in);
@@ -114,6 +115,7 @@ public class ejercicios1 {
 		sc.close();
 	}
 
+	@SuppressWarnings("unused")
 	private static void ejercicio11() {
 		System.out.println("Bienvenido al conversor de ºC a ºFahrenheit");
 		Scanner sc = new Scanner(System.in);
@@ -122,7 +124,7 @@ public class ejercicios1 {
 		System.out.println(32 + Integer.parseInt(c1) * 9 / 5 + "ºF");
 		sc.close();
 	}
-
+	@SuppressWarnings("unused")
 	private static void ejercicio12() {
 
 		Scanner sc = new Scanner(System.in);
@@ -135,7 +137,7 @@ public class ejercicios1 {
 		System.out.println("Centenas: " + centenas + " decenas: " + decenas + " unidades: " + unidades);
 		sc.close();
 	}
-
+	@SuppressWarnings("unused")
 	private static void ejercicio13() {
 
 		Scanner sc = new Scanner(System.in);
@@ -155,7 +157,7 @@ public class ejercicios1 {
 		System.out.println("Tu número de la suerte es " + nSuerte);
 		sc.close();
 	}
-
+	@SuppressWarnings("unused")
 	private static void ejercicio14() {
 
 		Scanner sc = new Scanner(System.in);
@@ -164,7 +166,7 @@ public class ejercicios1 {
 		System.out.println("Dentro de 15 años tendrás " + (n1 + 15) + " años.");
 		sc.close();
 	}
-
+	@SuppressWarnings("unused")
 	private static void ejercicio15() {
 
 		Scanner sc1 = new Scanner(System.in);
@@ -192,8 +194,12 @@ public class ejercicios1 {
 		System.out.printf("%-15s%11.2s€%11.2f€\n", n1, p1, (Double.parseDouble(p1) * 1.21));
 		System.out.printf("%-15s%11.2s€%11.2f€\n", n2, p2, (Double.parseDouble(p2) * 1.21));
 		System.out.printf("%-15s%11.2s€%11.2f€\n", n3, p3, (Double.parseDouble(p3) * 1.21));
+		
+		sc1.close();
+		sc2.close();
+		sc3.close();
 	}
-
+	@SuppressWarnings("unused")
 	private static void ejercicio20() {
 
 		Scanner sc = new Scanner(System.in);
@@ -204,7 +210,7 @@ public class ejercicios1 {
 		System.out.println("Has escrito " + n1 + " + " + n2 + " + " + n3 + " = " + (int) (n1 + n2 + n3));
 		sc.close();
 	}
-
+	@SuppressWarnings("unused")
 	private static void ejercicio21() {
 		Scanner sc = new Scanner(System.in);
 
@@ -218,8 +224,9 @@ public class ejercicios1 {
 
 		// usar \n\t para salto de linea y tab
 	}
-
+	
 	public static void main(String[] args) {
+		
 
 		// ejercicio1();
 		// ejercicio2();
@@ -234,7 +241,7 @@ public class ejercicios1 {
 		// ejercicio11();
 		// ejercicio12();
 		// ejercicio13();
-		 ejercicio14();
+		// ejercicio14();
 		// ejercicio15();
 		// ejercicio20();
 		// ejercicio21();

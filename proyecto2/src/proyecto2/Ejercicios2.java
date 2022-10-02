@@ -104,16 +104,153 @@ public class Ejercicios2 {
 		}else if(s1>59) {
 				System.out.println("Error, los segundos van de 0 a 59");
 		}else {
-			System.out.printf("%02d:%02d:%02d\n", h1, m1, s1);
+			System.out.printf("%02d:%02d:%3d\n", h1, m1, s1);
 		}
-			
+		sc.close();	
 	}
 		
+	public static void ejercicio8() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Dime un numero entero");
+		int n1 = sc.nextInt();
+		System.out.println((n1%2==0)?"Es par":"Es impar");
+		sc.close();
+	}
 	
-			
-				
+	public static void ejercicio9() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Dime el número de un mes: ");
+		int mes = sc.nextInt();
+		
+		switch (mes) {
+		case 1:
+			System.out.println("Enero tiene 31 días");
+			break;
+		case 2:
+			System.out.println("Febrero tiene 28 días");
+			break;
+		case 3:
+			System.out.println("Marzo tiene 31 días");
+			break;
+		case 4:
+			System.out.println("Abril tiene 30 días");
+			break;
+		case 5:
+			System.out.println("Mayo tiene 31 días");
+			break;
+		case 6:
+			System.out.println("Junio tiene 30 días");
+			break;
+		case 7:
+			System.out.println("Julio tiene 31 días");
+			break;
+		case 8:
+			System.out.println("Agosto tiene 31 días");
+			break;
+		case 9:
+			System.out.println("Septiembre tiene 30 días");
+			break;
+		case 10:
+			System.out.println("Octubre tiene 31 días");
+			break;
+		case 11:
+			System.out.println("Noviembre tiene 30 días");
+			break;
+		case 12:
+			System.out.println("Diciembre tiene 31 días");
+			break;
+		default:
+			System.out.println("Ese número no corresponde a ningún mes");
+			break;
+		}
+		sc.close();	
+	}
 	
+	public static void ejercicio10() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Pulsa una tecla e intro");
+		String c1 = sc.next();
+		
+		switch (c1) {
+		case ",":
+			System.out.println("Es un signo de puntuación");
+			break;
+		case ";":
+			System.out.println("Es un signo de puntuación");	
+			break;
+		case "." :
+			System.out.println("Es un signo de puntuación");
+			break;
+		case ":" :
+			System.out.println("Es un signo de puntuación");
+			break;
+		case "1":
+			System.out.println("Es un número");
+			break;
+		case "2":
+			System.out.println("Es un número");
+			break;
+		case "3":
+			System.out.println("Es un número");
+			break;
+		case "4":
+			System.out.println("Es un número")
+			;break;
+		case "5":
+			System.out.println("Es un número")
+			;break;
+		case "6":
+			System.out.println("Es un número")
+			;break;
+		case "7":
+			System.out.println("Es un número")
+			;break;
+		case "8":
+			System.out.println("Es un número")
+			;break;
+		case "9":
+			System.out.println("Es un número")
+			;break;
+		case "0":
+			System.out.println("Es un número")
+			;break;
+		default:
+			System.out.println("Es una letra")
+			;break;
+		}
+		sc.close();
+	}
 	
+	public static void ejercicio11() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe un número entero");
+		int n1 = sc.nextInt();
+		System.out.println("Escribe un segundo número entero");
+		int n2 = sc.nextInt();
+		System.out.println("Elige una de las siguientes opciones");
+		System.out.printf("%-12s%12s\n", "1.Sumar","2.Restar");
+		System.out.printf("%-12s%12s\n", "3.Multiplicar","4.Dividir");
+		int n3 = sc.nextInt();
+		if (n3==1) {
+			System.out.println(n1 + " + "+ n2 + " = " + (n1+n2));
+		}else if (n3==2) {
+			System.out.println(n1 + " - "+ n2 + " = " + (n1-n2) );
+		}else if (n3==3) {
+			System.out.println(n1 + " x "+ n2 + " = " + (n1*n2) );
+		}else if(n3==4) {
+			System.out.println((n2==0)?"El divisor no puede ser 0":n1 + " / "+ n2 + " = " + (n1/n2) + " y resto " + (n1%n2));
+		}else { 
+			System.out.println("Tienes que elegir una de las 4 opciones");
+		}
+		sc.close();
+	}
+
 	public static void ejercicio13() {
 		
 		for (int i = 20; i>0; i--) {
@@ -127,8 +264,13 @@ public class Ejercicios2 {
 		//ejercicio4();
 		//ejercicio5();
 		//ejercicio6();
-		ejercicio7();
+		//ejercicio7();
+		//ejercicio8();
+		//ejercicio9();
+		//ejercicio10();
+		ejercicio11();
 		//ejercicio13();
+		
 		
 	}
 }

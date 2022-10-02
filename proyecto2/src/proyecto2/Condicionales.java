@@ -96,6 +96,7 @@ public class Condicionales {
 			System.out.println("No sé cual es tu país...");
 			break;
 		}
+		sc.close();
 	}
 	
 	public static void main(String[] args) {
