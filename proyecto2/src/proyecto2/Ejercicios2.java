@@ -226,7 +226,7 @@ public class Ejercicios2 {
 		sc.close();
 	}
 	
-	public static void ejercicio11() {
+	public static void ejercicio11() { //para tantas opciones es mejor un switch en vez de if else if
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Escribe un número entero");
@@ -237,16 +237,23 @@ public class Ejercicios2 {
 		System.out.printf("%-12s%12s\n", "1.Sumar","2.Restar");
 		System.out.printf("%-12s%12s\n", "3.Multiplicar","4.Dividir");
 		int n3 = sc.nextInt();
-		if (n3==1) {
+		
+		switch(n3) {
+		case 1:
 			System.out.println(n1 + " + "+ n2 + " = " + (n1+n2));
-		}else if (n3==2) {
+			break;
+		case 2:
 			System.out.println(n1 + " - "+ n2 + " = " + (n1-n2) );
-		}else if (n3==3) {
+			break;
+		case 3:
 			System.out.println(n1 + " x "+ n2 + " = " + (n1*n2) );
-		}else if(n3==4) {
+			break;
+		case 4:
 			System.out.println((n2==0)?"El divisor no puede ser 0":n1 + " / "+ n2 + " = " + (n1/n2) + " y resto " + (n1%n2));
-		}else { 
+			break;
+		default:
 			System.out.println("Tienes que elegir una de las 4 opciones");
+			break;
 		}
 		sc.close();
 	}
@@ -290,10 +297,21 @@ public class Ejercicios2 {
 			i--;
 			}
 		}
+	
 	public static void ejercicio14() {
 		
-			
+		Scanner sc = new Scanner(System.in);
+		int i=0;
+		int n1;
+		do {
+			System.out.println("Escribe un número");
+			n1 = sc.nextInt();
 		
+			System.out.println((n1!=0)?i + " + " + n1 +" = "+ (i+n1):"");
+			i= i+n1;
+		} while (n1 != 0);
+			System.out.println(" --Fin del programa-- ");
+		sc.close();
 	}
 
 	public static void ejercicio15() {
@@ -374,17 +392,17 @@ public class Ejercicios2 {
 		//ejercicio8();
 		//ejercicio9();
 		//ejercicio10();
-		//ejercicio11();
+		ejercicio11();
 		//ejercicio12();
 		//ejercicio13();
-						//ejercicio14();
+		//ejercicio14();
 		//ejercicio15();
 		//ejercicio16();
 		//ejercicio17();
 		//ejercicio18();
 		//ejercicio19();
 						//ejercicio20();
-		ejercicio21();
+		//ejercicio21();
 		//ejercicio22();
 		//ejercicio23();
 		//ejercicio24();
