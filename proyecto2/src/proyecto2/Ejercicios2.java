@@ -260,28 +260,38 @@ public class Ejercicios2 {
 	
 	public static void ejercicio12() {
 		
+		final int MAYORIA_EDAD = 18;
+		final int JUBILADO = 65;
+		final double DESCUENTO_JOVEN = 0.25;
+		final double DESCUENTO_SOCIO = 0.40;
+		final double DESCUENTO_JUBILADO = 0.75;
+		
 		Scanner sc = new Scanner(System.in);
 		double entrada = 50;
 		System.out.printf("La entrada cuesta: %.0f€\n", entrada);
 		System.out.println("¿Qué edad tienes?");
 		int edad = sc.nextInt();
-		if (edad<18) {
-			entrada = entrada - (entrada*25/100);
+		if (edad<MAYORIA_EDAD) {
+			entrada = entrada - (entrada*DESCUENTO_JOVEN);
 			System.out.println("Tienes un descuento del 25%");
-			System.out.printf("La entrada te cuesta: %.2f€", entrada);
-		}else if (edad>=65) {
+			System.out.printf("La entrada te cuesta: %.2f€", entrada);	
+		}else if (edad>=MAYORIA_EDAD && edad<JUBILADO) {
 			System.out.println("¿Eres socio? si o no");
 			String n1 = sc.next();
-			if (n1.equals("si")) {
-				entrada = entrada - (entrada*40/100);
+			if (n1.toLowerCase().equals("si")||n1.toLowerCase().equals("sí")) {
+				entrada = entrada - (entrada*DESCUENTO_SOCIO);
 				System.out.println("Tienes un descuento del 40%");
 				System.out.printf("La entrada te cuesta: %.0f€", entrada);
-			}else if (n1.equals("no")) {
-				System.out.printf("No tienes nigún descuento disponible, son  %.0f€", entrada);
+			}else if (n1.toLowerCase().equals("no")) {
+				System.out.printf("La entrada te cuesta: %.0f€", entrada);
 			}else {
 				System.out.println("Por favor, debe escribir si o no");
-			}	
-		}else System.out.printf("No tienes nigún descuento disponible, son  %.0f€", entrada);	
+			}		
+		}else {
+			entrada = entrada - (entrada*DESCUENTO_JUBILADO);
+			System.out.println("Tienes un descuento del 75%");
+			System.out.printf("La entrada te cuesta: %.2f€", entrada);	
+		}
 		sc.close();
 	}
 
@@ -306,11 +316,9 @@ public class Ejercicios2 {
 		do {
 			System.out.println("Escribe un número");
 			n1 = sc.nextInt();
-		
-			System.out.println((n1!=0)?i + " + " + n1 +" = "+ (i+n1):"");
+			System.out.println((n1!=0)?i + " + " + n1 +" = "+ (i+n1):" --Fin del programa-- ");
 			i= i+n1;
 		} while (n1 != 0);
-			System.out.println(" --Fin del programa-- ");
 		sc.close();
 	}
 
@@ -392,8 +400,8 @@ public class Ejercicios2 {
 		//ejercicio8();
 		//ejercicio9();
 		//ejercicio10();
-		ejercicio11();
-		//ejercicio12();
+		//ejercicio11();
+		ejercicio12();
 		//ejercicio13();
 		//ejercicio14();
 		//ejercicio15();

@@ -10526,3 +10526,2554 @@ java.lang.IllegalArgumentException
 	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
 	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
 	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+
+!ENTRY org.eclipse.jdt.core 4 4 2022-10-05 18:07:41.468
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package proyecto2;
+
+import java.util.Scanner;
+
+public class Ejercicios2 {
+	
+	public static void ejercicio2() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Introduce un número entero: ");	
+		int n1 = sc.nextInt();
+		System.out.println((n1%10==0)?"El número es múltiplo de 10":"El número no es múltiple de 10");	
+		sc.close();
+	}
+	
+	public static void ejercicio3() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Introduce una letra ");
+		String l1 = sc.nextLine();
+		
+		if (l1.equals("")) {
+			System.out.println("Tienes que poner una letra!");
+		} else if (l1.length() > 1) {
+			System.out.println("Pon solamente UNA letra!");
+		} else {
+			char c1 = l1.charAt(0); //Permite cambiar una cadena en un carácter "string".charAt(0);
+			System.out.println(c1 >= 'A' && c1 <= 'Z'? "Es mayúscula":"Es minúscula");	
+		}
+		sc.close();
+	}
+
+	public static void ejercicio4() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe la contraseña");
+		String c1 = sc.nextLine();
+		System.out.println("Escribe la contraseña otra vez");
+		String c2 = sc.nextLine();
+		
+		System.out.println((c1.equals(c2))?"La contraseña es correcta":"Contraseña incorrecta");
+		sc.close();
+	}
+	
+	public static void ejercicio5() {
+			
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Dividendo: ");
+		int n1 = sc.nextInt();
+		System.out.println("Divisor: ");
+		int n2 = sc.nextInt();
+		
+		if (n2==0) {
+			System.out.println("El divisor no puede ser 0");
+		} else {
+			System.out.println(n1 + " : " + n2 + " = " + (n1/n2) + " con resto " + (n1%n2) );
+		}
+		sc.close();
+	}
+
+	public static void ejercicio6() {
+			
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Dame un número entero");
+		int n1 = sc.nextInt();
+		System.out.println("Dame otro número entero");
+		int n2 = sc.nextInt();
+		System.out.println("Dame otro número entero");
+		int n3 = sc.nextInt();
+		
+		if (n1 > n2 ) {
+			if (n1 > n3) {
+				System.out.println(n1 + " Es el mayor número");}
+		}else if( n2 > n3 ) {
+			System.out.println(n2 + " Es el mayor número");
+		}else {
+			System.out.println(n3 + " Es el mayor número");
+		}
+		sc.close();
+	}
+	
+	public static void ejercicio7() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Dime una hora");
+		int h1 = sc.nextInt();
+		System.out.println("Dime los minutos");
+		int m1 = sc.nextInt();
+		System.out.println("Dime los segundos");
+		int s1 = sc.nextInt();
+		
+		if (h1<0) {
+			System.out.println("Error, las horas van de 0 a 23");
+		}else if(h1>23) {
+			System.out.println("Error, las horas van de 0 a 23");
+		}else if  (m1<0) {
+			System.out.println("Error, los minutos van de 0 a 59");
+		}
+		else if(m1>59) {
+				System.out.println("Error, los minutos van de 0 a 59");
+		}else if  (s1<0) {
+			System.out.println("Error, los segundos van de 0 a 59");
+		}else if(s1>59) {
+				System.out.println("Error, los segundos van de 0 a 59");
+		}else {
+			System.out.printf("%02d:%02d:%3d\n", h1, m1, s1);
+		}
+		sc.close();	
+	}
+		
+	public static void ejercicio8() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Dime un numero entero");
+		int n1 = sc.nextInt();
+		System.out.println((n1%2==0)?"Es par":"Es impar");
+		sc.close();
+	}
+	
+	public static void ejercicio9() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Dime el número de un mes: ");
+		int mes = sc.nextInt();
+		
+		switch (mes) {
+		case 1:
+			System.out.println("Enero tiene 31 días");
+			break;
+		case 2:
+			System.out.println("Febrero tiene 28 días");
+			break;
+		case 3:
+			System.out.println("Marzo tiene 31 días");
+			break;
+		case 4:
+			System.out.println("Abril tiene 30 días");
+			break;
+		case 5:
+			System.out.println("Mayo tiene 31 días");
+			break;
+		case 6:
+			System.out.println("Junio tiene 30 días");
+			break;
+		case 7:
+			System.out.println("Julio tiene 31 días");
+			break;
+		case 8:
+			System.out.println("Agosto tiene 31 días");
+			break;
+		case 9:
+			System.out.println("Septiembre tiene 30 días");
+			break;
+		case 10:
+			System.out.println("Octubre tiene 31 días");
+			break;
+		case 11:
+			System.out.println("Noviembre tiene 30 días");
+			break;
+		case 12:
+			System.out.println("Diciembre tiene 31 días");
+			break;
+		default:
+			System.out.println("Ese número no corresponde a ningún mes");
+			break;
+		}
+		sc.close();	
+	}
+	
+	public static void ejercicio10() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Pulsa una tecla e intro");
+		String c1 = sc.next();
+		
+		switch (c1) {
+		case ",":
+			System.out.println("Es un signo de puntuación");
+			break;
+		case ";":
+			System.out.println("Es un signo de puntuación");	
+			break;
+		case "." :
+			System.out.println("Es un signo de puntuación");
+			break;
+		case ":" :
+			System.out.println("Es un signo de puntuación");
+			break;
+		case "1":
+			System.out.println("Es un número");
+			break;
+		case "2":
+			System.out.println("Es un número");
+			break;
+		case "3":
+			System.out.println("Es un número");
+			break;
+		case "4":
+			System.out.println("Es un número")
+			;break;
+		case "5":
+			System.out.println("Es un número")
+			;break;
+		case "6":
+			System.out.println("Es un número")
+			;break;
+		case "7":
+			System.out.println("Es un número")
+			;break;
+		case "8":
+			System.out.println("Es un número")
+			;break;
+		case "9":
+			System.out.println("Es un número")
+			;break;
+		case "0":
+			System.out.println("Es un número")
+			;break;
+		default:
+			System.out.println("Es una letra")
+			;break;
+		}
+		sc.close();
+	}
+	
+	public static void ejercicio11() { //para tantas opciones es mejor un switch en vez de if else if
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe un número entero");
+		int n1 = sc.nextInt();
+		System.out.println("Escribe un segundo número entero");
+		int n2 = sc.nextInt();
+		System.out.println("Elige una de las siguientes opciones");
+		System.out.printf("%-12s%12s\n", "1.Sumar","2.Restar");
+		System.out.printf("%-12s%12s\n", "3.Multiplicar","4.Dividir");
+		int n3 = sc.nextInt();
+		
+		switch(n3) {
+		case 1:
+			System.out.println(n1 + " + "+ n2 + " = " + (n1+n2));
+			break;
+		case 2:
+			System.out.println(n1 + " - "+ n2 + " = " + (n1-n2) );
+			break;
+		case 3:
+			System.out.println(n1 + " x "+ n2 + " = " + (n1*n2) );
+			break;
+		case 4:
+			System.out.println((n2==0)?"El divisor no puede ser 0":n1 + " / "+ n2 + " = " + (n1/n2) + " y resto " + (n1%n2));
+			break;
+		default:
+			System.out.println("Tienes que elegir una de las 4 opciones");
+			break;
+		}
+		sc.close();
+	}
+	
+	public static void ejercicio12() {
+		
+		Scanner sc = new Scanner(System.in);
+		double entrada = 50;
+		System.out.printf("La entrada cuesta: %.0f€\n", entrada);
+		System.out.println("¿Qué edad tienes?");
+		int edad = sc.nextInt();
+		switch(edad)
+		case (edad<18): 
+			entrada = entrada - (entrada*25/100);
+			System.out.println("Tienes un descuento del 25%");
+			System.out.printf("La entrada te cuesta: %.2f€", entrada);
+			break;
+		 (edad>=65) {
+			System.out.println("¿Eres socio? si o no");
+			String n1 = sc.next();
+			if (n1.equals("si")) {
+				entrada = entrada - (entrada*40/100);
+				System.out.println("Tienes un descuento del 40%");
+				System.out.printf("La entrada te cuesta: %.0f€", entrada);
+			}else if (n1.equals("no")) {
+				System.out.printf("No tienes nigún descuento disponible, son  %.0f€", entrada);
+			}else {
+				System.out.println("Por favor, debe escribir si o no");
+			}	
+		}else System.out.printf("No tienes nigún descuento disponible, son  %.0f€", entrada);	
+		sc.close();
+	}
+
+	public static void ejercicio13() {
+		
+		for (int i = 20; i>0; i--) {
+			System.out.println(i);
+		}
+	
+		int i= 20;
+		while(i > 0) { 
+			System.out.println(i); 
+			i--;
+			}
+		}
+	
+	public static void ejercicio14() {
+		
+		Scanner sc = new Scanner(System.in);
+		int i=0;
+		int n1;
+		do {
+			System.out.println("Escribe un número");
+			n1 = sc.nextInt();
+		
+			System.out.println((n1!=0)?i + " + " + n1 +" = "+ (i+n1):"");
+			i= i+n1;
+		} while (n1 != 0);
+			System.out.println(" --Fin del programa-- ");
+		sc.close();
+	}
+
+	public static void ejercicio15() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe un número");
+		int n1 = sc.nextInt();
+		int cifras = 0;
+		while (n1!= 0) {
+			n1 = n1 /10;
+			cifras++;
+			}			
+		System.out.print("Tiene " + cifras + " cifra" );
+		System.out.println((cifras==1)? "":"s");
+		sc.close();
+	}
+
+	public static void ejercicio16() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe un número entero");
+		for (int n1 = sc.nextInt();n1>0; n1--) {
+			System.out.print("*");
+		}
+		sc.close();
+	}
+
+	public static void ejercicio17() {
+		for (int i = 30; i>0; i--) {
+			System.out.println((i%3!=0)?i:"");
+		}
+	}
+
+	public static void ejercicio18() {
+		for (int i = 0; i <=100; ) {  
+			System.out.println(i);
+			i++;
+			i++;
+			i++;
+			i++;
+			i++;
+		}
+	}
+
+	public static void ejercicio19() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Dime un numero");
+		int n1 = sc.nextInt();
+		for (int n2 = 1; n2 <= n1 ;n2++) {
+			System.out.print((n2!=n1)?n2 + ", ":n2);
+		}
+		sc.close();
+	}
+
+	public static void ejercicio20() {
+		
+		
+	
+		
+	}
+
+	public static void ejercicio21() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe un número para saber sus divisores");
+		int n1 = sc.nextInt();
+		for (int n2 = n1; n2>=1; n2--) {
+		System.out.print((n1%n2==0)?n2 + " ": "");
+		}
+		sc.close();
+	}
+
+
+	public static void main(String[] args) {
+		//ejercicio2();
+		//ejercicio3();
+		//ejercicio4();
+		//ejercicio5();
+		//ejercicio6();
+		//ejercicio7();
+		//ejercicio8();
+		//ejercicio9();
+		//ejercicio10();
+		ejercicio11();
+		//ejercicio12();
+		//ejercicio13();
+		//ejercicio14();
+		//ejercicio15();
+		//ejercicio16();
+		//ejercicio17();
+		//ejercicio18();
+		//ejercicio19();
+						//ejercicio20();
+		//ejercicio21();
+		//ejercicio22();
+		//ejercicio23();
+		//ejercicio24();
+		//ejercicio25();
+		//ejercicio26();
+		//ejercicio27();
+		//ejercicio28();
+		//ejercicio29();
+		//ejercicio30();
+		
+		
+		
+		
+	}
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2047)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3853)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1953)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1990)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3095)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3159)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3046)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3390)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1534)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:540)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:201)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:94)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:91)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:158)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2022-10-05 18:07:41.468
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2047)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3853)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1953)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1990)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3095)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3159)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3046)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3390)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1534)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:540)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:201)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:94)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:91)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:158)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2022-10-05 18:07:41.469
+!MESSAGE Error in JDT Core during reconcile
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2047)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3853)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1953)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1990)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3095)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3159)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3046)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3390)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1534)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:540)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:201)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:94)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:91)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:158)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+
+!ENTRY org.eclipse.jdt.core 4 4 2022-10-05 18:07:41.543
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package proyecto2;
+
+import java.util.Scanner;
+
+public class Ejercicios2 {
+	
+	public static void ejercicio2() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Introduce un número entero: ");	
+		int n1 = sc.nextInt();
+		System.out.println((n1%10==0)?"El número es múltiplo de 10":"El número no es múltiple de 10");	
+		sc.close();
+	}
+	
+	public static void ejercicio3() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Introduce una letra ");
+		String l1 = sc.nextLine();
+		
+		if (l1.equals("")) {
+			System.out.println("Tienes que poner una letra!");
+		} else if (l1.length() > 1) {
+			System.out.println("Pon solamente UNA letra!");
+		} else {
+			char c1 = l1.charAt(0); //Permite cambiar una cadena en un carácter "string".charAt(0);
+			System.out.println(c1 >= 'A' && c1 <= 'Z'? "Es mayúscula":"Es minúscula");	
+		}
+		sc.close();
+	}
+
+	public static void ejercicio4() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe la contraseña");
+		String c1 = sc.nextLine();
+		System.out.println("Escribe la contraseña otra vez");
+		String c2 = sc.nextLine();
+		
+		System.out.println((c1.equals(c2))?"La contraseña es correcta":"Contraseña incorrecta");
+		sc.close();
+	}
+	
+	public static void ejercicio5() {
+			
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Dividendo: ");
+		int n1 = sc.nextInt();
+		System.out.println("Divisor: ");
+		int n2 = sc.nextInt();
+		
+		if (n2==0) {
+			System.out.println("El divisor no puede ser 0");
+		} else {
+			System.out.println(n1 + " : " + n2 + " = " + (n1/n2) + " con resto " + (n1%n2) );
+		}
+		sc.close();
+	}
+
+	public static void ejercicio6() {
+			
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Dame un número entero");
+		int n1 = sc.nextInt();
+		System.out.println("Dame otro número entero");
+		int n2 = sc.nextInt();
+		System.out.println("Dame otro número entero");
+		int n3 = sc.nextInt();
+		
+		if (n1 > n2 ) {
+			if (n1 > n3) {
+				System.out.println(n1 + " Es el mayor número");}
+		}else if( n2 > n3 ) {
+			System.out.println(n2 + " Es el mayor número");
+		}else {
+			System.out.println(n3 + " Es el mayor número");
+		}
+		sc.close();
+	}
+	
+	public static void ejercicio7() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Dime una hora");
+		int h1 = sc.nextInt();
+		System.out.println("Dime los minutos");
+		int m1 = sc.nextInt();
+		System.out.println("Dime los segundos");
+		int s1 = sc.nextInt();
+		
+		if (h1<0) {
+			System.out.println("Error, las horas van de 0 a 23");
+		}else if(h1>23) {
+			System.out.println("Error, las horas van de 0 a 23");
+		}else if  (m1<0) {
+			System.out.println("Error, los minutos van de 0 a 59");
+		}
+		else if(m1>59) {
+				System.out.println("Error, los minutos van de 0 a 59");
+		}else if  (s1<0) {
+			System.out.println("Error, los segundos van de 0 a 59");
+		}else if(s1>59) {
+				System.out.println("Error, los segundos van de 0 a 59");
+		}else {
+			System.out.printf("%02d:%02d:%3d\n", h1, m1, s1);
+		}
+		sc.close();	
+	}
+		
+	public static void ejercicio8() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Dime un numero entero");
+		int n1 = sc.nextInt();
+		System.out.println((n1%2==0)?"Es par":"Es impar");
+		sc.close();
+	}
+	
+	public static void ejercicio9() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Dime el número de un mes: ");
+		int mes = sc.nextInt();
+		
+		switch (mes) {
+		case 1:
+			System.out.println("Enero tiene 31 días");
+			break;
+		case 2:
+			System.out.println("Febrero tiene 28 días");
+			break;
+		case 3:
+			System.out.println("Marzo tiene 31 días");
+			break;
+		case 4:
+			System.out.println("Abril tiene 30 días");
+			break;
+		case 5:
+			System.out.println("Mayo tiene 31 días");
+			break;
+		case 6:
+			System.out.println("Junio tiene 30 días");
+			break;
+		case 7:
+			System.out.println("Julio tiene 31 días");
+			break;
+		case 8:
+			System.out.println("Agosto tiene 31 días");
+			break;
+		case 9:
+			System.out.println("Septiembre tiene 30 días");
+			break;
+		case 10:
+			System.out.println("Octubre tiene 31 días");
+			break;
+		case 11:
+			System.out.println("Noviembre tiene 30 días");
+			break;
+		case 12:
+			System.out.println("Diciembre tiene 31 días");
+			break;
+		default:
+			System.out.println("Ese número no corresponde a ningún mes");
+			break;
+		}
+		sc.close();	
+	}
+	
+	public static void ejercicio10() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Pulsa una tecla e intro");
+		String c1 = sc.next();
+		
+		switch (c1) {
+		case ",":
+			System.out.println("Es un signo de puntuación");
+			break;
+		case ";":
+			System.out.println("Es un signo de puntuación");	
+			break;
+		case "." :
+			System.out.println("Es un signo de puntuación");
+			break;
+		case ":" :
+			System.out.println("Es un signo de puntuación");
+			break;
+		case "1":
+			System.out.println("Es un número");
+			break;
+		case "2":
+			System.out.println("Es un número");
+			break;
+		case "3":
+			System.out.println("Es un número");
+			break;
+		case "4":
+			System.out.println("Es un número")
+			;break;
+		case "5":
+			System.out.println("Es un número")
+			;break;
+		case "6":
+			System.out.println("Es un número")
+			;break;
+		case "7":
+			System.out.println("Es un número")
+			;break;
+		case "8":
+			System.out.println("Es un número")
+			;break;
+		case "9":
+			System.out.println("Es un número")
+			;break;
+		case "0":
+			System.out.println("Es un número")
+			;break;
+		default:
+			System.out.println("Es una letra")
+			;break;
+		}
+		sc.close();
+	}
+	
+	public static void ejercicio11() { //para tantas opciones es mejor un switch en vez de if else if
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe un número entero");
+		int n1 = sc.nextInt();
+		System.out.println("Escribe un segundo número entero");
+		int n2 = sc.nextInt();
+		System.out.println("Elige una de las siguientes opciones");
+		System.out.printf("%-12s%12s\n", "1.Sumar","2.Restar");
+		System.out.printf("%-12s%12s\n", "3.Multiplicar","4.Dividir");
+		int n3 = sc.nextInt();
+		
+		switch(n3) {
+		case 1:
+			System.out.println(n1 + " + "+ n2 + " = " + (n1+n2));
+			break;
+		case 2:
+			System.out.println(n1 + " - "+ n2 + " = " + (n1-n2) );
+			break;
+		case 3:
+			System.out.println(n1 + " x "+ n2 + " = " + (n1*n2) );
+			break;
+		case 4:
+			System.out.println((n2==0)?"El divisor no puede ser 0":n1 + " / "+ n2 + " = " + (n1/n2) + " y resto " + (n1%n2));
+			break;
+		default:
+			System.out.println("Tienes que elegir una de las 4 opciones");
+			break;
+		}
+		sc.close();
+	}
+	
+	public static void ejercicio12() {
+		
+		Scanner sc = new Scanner(System.in);
+		double entrada = 50;
+		System.out.printf("La entrada cuesta: %.0f€\n", entrada);
+		System.out.println("¿Qué edad tienes?");
+		int edad = sc.nextInt();
+		switch(edad)
+		case (edad<18): 
+			entrada = entrada - (entrada*25/100);
+			System.out.println("Tienes un descuento del 25%");
+			System.out.printf("La entrada te cuesta: %.2f€", entrada);
+			break;
+		 (edad>=65) {
+			System.out.println("¿Eres socio? si o no");
+			String n1 = sc.next();
+			if (n1.equals("si")) {
+				entrada = entrada - (entrada*40/100);
+				System.out.println("Tienes un descuento del 40%");
+				System.out.printf("La entrada te cuesta: %.0f€", entrada);
+			}else if (n1.equals("no")) {
+				System.out.printf("No tienes nigún descuento disponible, son  %.0f€", entrada);
+			}else {
+				System.out.println("Por favor, debe escribir si o no");
+			}	
+		}else System.out.printf("No tienes nigún descuento disponible, son  %.0f€", entrada);	
+		sc.close();
+	}
+
+	public static void ejercicio13() {
+		
+		for (int i = 20; i>0; i--) {
+			System.out.println(i);
+		}
+	
+		int i= 20;
+		while(i > 0) { 
+			System.out.println(i); 
+			i--;
+			}
+		}
+	
+	public static void ejercicio14() {
+		
+		Scanner sc = new Scanner(System.in);
+		int i=0;
+		int n1;
+		do {
+			System.out.println("Escribe un número");
+			n1 = sc.nextInt();
+		
+			System.out.println((n1!=0)?i + " + " + n1 +" = "+ (i+n1):"");
+			i= i+n1;
+		} while (n1 != 0);
+			System.out.println(" --Fin del programa-- ");
+		sc.close();
+	}
+
+	public static void ejercicio15() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe un número");
+		int n1 = sc.nextInt();
+		int cifras = 0;
+		while (n1!= 0) {
+			n1 = n1 /10;
+			cifras++;
+			}			
+		System.out.print("Tiene " + cifras + " cifra" );
+		System.out.println((cifras==1)? "":"s");
+		sc.close();
+	}
+
+	public static void ejercicio16() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe un número entero");
+		for (int n1 = sc.nextInt();n1>0; n1--) {
+			System.out.print("*");
+		}
+		sc.close();
+	}
+
+	public static void ejercicio17() {
+		for (int i = 30; i>0; i--) {
+			System.out.println((i%3!=0)?i:"");
+		}
+	}
+
+	public static void ejercicio18() {
+		for (int i = 0; i <=100; ) {  
+			System.out.println(i);
+			i++;
+			i++;
+			i++;
+			i++;
+			i++;
+		}
+	}
+
+	public static void ejercicio19() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Dime un numero");
+		int n1 = sc.nextInt();
+		for (int n2 = 1; n2 <= n1 ;n2++) {
+			System.out.print((n2!=n1)?n2 + ", ":n2);
+		}
+		sc.close();
+	}
+
+	public static void ejercicio20() {
+		
+		
+	
+		
+	}
+
+	public static void ejercicio21() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe un número para saber sus divisores");
+		int n1 = sc.nextInt();
+		for (int n2 = n1; n2>=1; n2--) {
+		System.out.print((n1%n2==0)?n2 + " ": "");
+		}
+		sc.close();
+	}
+
+
+	public static void main(String[] args) {
+		//ejercicio2();
+		//ejercicio3();
+		//ejercicio4();
+		//ejercicio5();
+		//ejercicio6();
+		//ejercicio7();
+		//ejercicio8();
+		//ejercicio9();
+		//ejercicio10();
+		ejercicio11();
+		//ejercicio12();
+		//ejercicio13();
+		//ejercicio14();
+		//ejercicio15();
+		//ejercicio16();
+		//ejercicio17();
+		//ejercicio18();
+		//ejercicio19();
+						//ejercicio20();
+		//ejercicio21();
+		//ejercicio22();
+		//ejercicio23();
+		//ejercicio24();
+		//ejercicio25();
+		//ejercicio26();
+		//ejercicio27();
+		//ejercicio28();
+		//ejercicio29();
+		//ejercicio30();
+		
+		
+		
+		
+	}
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2047)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3853)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1953)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1990)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3095)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3159)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3046)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3390)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1534)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:344)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1272)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:868)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:294)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:286)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:199)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.text.java.hover.NLSStringHover.internalGetHoverInfo(NLSStringHover.java:141)
+	at org.eclipse.jdt.internal.ui.text.java.hover.NLSStringHover.getHoverInfo2(NLSStringHover.java:120)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 2 2022-10-05 18:07:41.544
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.core.manipulation".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2047)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3853)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1953)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1990)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3095)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3159)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3046)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3390)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1534)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:344)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1272)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:868)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:294)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:286)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:199)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.text.java.hover.NLSStringHover.internalGetHoverInfo(NLSStringHover.java:141)
+	at org.eclipse.jdt.internal.ui.text.java.hover.NLSStringHover.getHoverInfo2(NLSStringHover.java:120)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 0 2022-10-05 18:07:41.545
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2047)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3853)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1953)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1990)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3095)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3159)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3046)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3390)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1534)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:344)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1272)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:868)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:294)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:286)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:199)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.text.java.hover.NLSStringHover.internalGetHoverInfo(NLSStringHover.java:141)
+	at org.eclipse.jdt.internal.ui.text.java.hover.NLSStringHover.getHoverInfo2(NLSStringHover.java:120)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jdt.core 4 4 2022-10-05 18:07:41.787
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package proyecto2;
+
+import java.util.Scanner;
+
+public class Ejercicios2 {
+	
+	public static void ejercicio2() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Introduce un número entero: ");	
+		int n1 = sc.nextInt();
+		System.out.println((n1%10==0)?"El número es múltiplo de 10":"El número no es múltiple de 10");	
+		sc.close();
+	}
+	
+	public static void ejercicio3() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Introduce una letra ");
+		String l1 = sc.nextLine();
+		
+		if (l1.equals("")) {
+			System.out.println("Tienes que poner una letra!");
+		} else if (l1.length() > 1) {
+			System.out.println("Pon solamente UNA letra!");
+		} else {
+			char c1 = l1.charAt(0); //Permite cambiar una cadena en un carácter "string".charAt(0);
+			System.out.println(c1 >= 'A' && c1 <= 'Z'? "Es mayúscula":"Es minúscula");	
+		}
+		sc.close();
+	}
+
+	public static void ejercicio4() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe la contraseña");
+		String c1 = sc.nextLine();
+		System.out.println("Escribe la contraseña otra vez");
+		String c2 = sc.nextLine();
+		
+		System.out.println((c1.equals(c2))?"La contraseña es correcta":"Contraseña incorrecta");
+		sc.close();
+	}
+	
+	public static void ejercicio5() {
+			
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Dividendo: ");
+		int n1 = sc.nextInt();
+		System.out.println("Divisor: ");
+		int n2 = sc.nextInt();
+		
+		if (n2==0) {
+			System.out.println("El divisor no puede ser 0");
+		} else {
+			System.out.println(n1 + " : " + n2 + " = " + (n1/n2) + " con resto " + (n1%n2) );
+		}
+		sc.close();
+	}
+
+	public static void ejercicio6() {
+			
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Dame un número entero");
+		int n1 = sc.nextInt();
+		System.out.println("Dame otro número entero");
+		int n2 = sc.nextInt();
+		System.out.println("Dame otro número entero");
+		int n3 = sc.nextInt();
+		
+		if (n1 > n2 ) {
+			if (n1 > n3) {
+				System.out.println(n1 + " Es el mayor número");}
+		}else if( n2 > n3 ) {
+			System.out.println(n2 + " Es el mayor número");
+		}else {
+			System.out.println(n3 + " Es el mayor número");
+		}
+		sc.close();
+	}
+	
+	public static void ejercicio7() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Dime una hora");
+		int h1 = sc.nextInt();
+		System.out.println("Dime los minutos");
+		int m1 = sc.nextInt();
+		System.out.println("Dime los segundos");
+		int s1 = sc.nextInt();
+		
+		if (h1<0) {
+			System.out.println("Error, las horas van de 0 a 23");
+		}else if(h1>23) {
+			System.out.println("Error, las horas van de 0 a 23");
+		}else if  (m1<0) {
+			System.out.println("Error, los minutos van de 0 a 59");
+		}
+		else if(m1>59) {
+				System.out.println("Error, los minutos van de 0 a 59");
+		}else if  (s1<0) {
+			System.out.println("Error, los segundos van de 0 a 59");
+		}else if(s1>59) {
+				System.out.println("Error, los segundos van de 0 a 59");
+		}else {
+			System.out.printf("%02d:%02d:%3d\n", h1, m1, s1);
+		}
+		sc.close();	
+	}
+		
+	public static void ejercicio8() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Dime un numero entero");
+		int n1 = sc.nextInt();
+		System.out.println((n1%2==0)?"Es par":"Es impar");
+		sc.close();
+	}
+	
+	public static void ejercicio9() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Dime el número de un mes: ");
+		int mes = sc.nextInt();
+		
+		switch (mes) {
+		case 1:
+			System.out.println("Enero tiene 31 días");
+			break;
+		case 2:
+			System.out.println("Febrero tiene 28 días");
+			break;
+		case 3:
+			System.out.println("Marzo tiene 31 días");
+			break;
+		case 4:
+			System.out.println("Abril tiene 30 días");
+			break;
+		case 5:
+			System.out.println("Mayo tiene 31 días");
+			break;
+		case 6:
+			System.out.println("Junio tiene 30 días");
+			break;
+		case 7:
+			System.out.println("Julio tiene 31 días");
+			break;
+		case 8:
+			System.out.println("Agosto tiene 31 días");
+			break;
+		case 9:
+			System.out.println("Septiembre tiene 30 días");
+			break;
+		case 10:
+			System.out.println("Octubre tiene 31 días");
+			break;
+		case 11:
+			System.out.println("Noviembre tiene 30 días");
+			break;
+		case 12:
+			System.out.println("Diciembre tiene 31 días");
+			break;
+		default:
+			System.out.println("Ese número no corresponde a ningún mes");
+			break;
+		}
+		sc.close();	
+	}
+	
+	public static void ejercicio10() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Pulsa una tecla e intro");
+		String c1 = sc.next();
+		
+		switch (c1) {
+		case ",":
+			System.out.println("Es un signo de puntuación");
+			break;
+		case ";":
+			System.out.println("Es un signo de puntuación");	
+			break;
+		case "." :
+			System.out.println("Es un signo de puntuación");
+			break;
+		case ":" :
+			System.out.println("Es un signo de puntuación");
+			break;
+		case "1":
+			System.out.println("Es un número");
+			break;
+		case "2":
+			System.out.println("Es un número");
+			break;
+		case "3":
+			System.out.println("Es un número");
+			break;
+		case "4":
+			System.out.println("Es un número")
+			;break;
+		case "5":
+			System.out.println("Es un número")
+			;break;
+		case "6":
+			System.out.println("Es un número")
+			;break;
+		case "7":
+			System.out.println("Es un número")
+			;break;
+		case "8":
+			System.out.println("Es un número")
+			;break;
+		case "9":
+			System.out.println("Es un número")
+			;break;
+		case "0":
+			System.out.println("Es un número")
+			;break;
+		default:
+			System.out.println("Es una letra")
+			;break;
+		}
+		sc.close();
+	}
+	
+	public static void ejercicio11() { //para tantas opciones es mejor un switch en vez de if else if
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe un número entero");
+		int n1 = sc.nextInt();
+		System.out.println("Escribe un segundo número entero");
+		int n2 = sc.nextInt();
+		System.out.println("Elige una de las siguientes opciones");
+		System.out.printf("%-12s%12s\n", "1.Sumar","2.Restar");
+		System.out.printf("%-12s%12s\n", "3.Multiplicar","4.Dividir");
+		int n3 = sc.nextInt();
+		
+		switch(n3) {
+		case 1:
+			System.out.println(n1 + " + "+ n2 + " = " + (n1+n2));
+			break;
+		case 2:
+			System.out.println(n1 + " - "+ n2 + " = " + (n1-n2) );
+			break;
+		case 3:
+			System.out.println(n1 + " x "+ n2 + " = " + (n1*n2) );
+			break;
+		case 4:
+			System.out.println((n2==0)?"El divisor no puede ser 0":n1 + " / "+ n2 + " = " + (n1/n2) + " y resto " + (n1%n2));
+			break;
+		default:
+			System.out.println("Tienes que elegir una de las 4 opciones");
+			break;
+		}
+		sc.close();
+	}
+	
+	public static void ejercicio12() {
+		
+		Scanner sc = new Scanner(System.in);
+		double entrada = 50;
+		System.out.printf("La entrada cuesta: %.0f€\n", entrada);
+		System.out.println("¿Qué edad tienes?");
+		int edad = sc.nextInt();
+		switch(edad)
+		case (edad<18): 
+			entrada = entrada - (entrada*25/100);
+			System.out.println("Tienes un descuento del 25%");
+			System.out.printf("La entrada te cuesta: %.2f€", entrada);
+			break;
+		 (edad>=65) {
+			System.out.println("¿Eres socio? si o no");
+			String n1 = sc.next();
+			if (n1.equals("si")) {
+				entrada = entrada - (entrada*40/100);
+				System.out.println("Tienes un descuento del 40%");
+				System.out.printf("La entrada te cuesta: %.0f€", entrada);
+			}else if (n1.equals("no")) {
+				System.out.printf("No tienes nigún descuento disponible, son  %.0f€", entrada);
+			}else {
+				System.out.println("Por favor, debe escribir si o no");
+			}	
+		}else System.out.printf("No tienes nigún descuento disponible, son  %.0f€", entrada);	
+		sc.close();
+	}
+
+	public static void ejercicio13() {
+		
+		for (int i = 20; i>0; i--) {
+			System.out.println(i);
+		}
+	
+		int i= 20;
+		while(i > 0) { 
+			System.out.println(i); 
+			i--;
+			}
+		}
+	
+	public static void ejercicio14() {
+		
+		Scanner sc = new Scanner(System.in);
+		int i=0;
+		int n1;
+		do {
+			System.out.println("Escribe un número");
+			n1 = sc.nextInt();
+		
+			System.out.println((n1!=0)?i + " + " + n1 +" = "+ (i+n1):"");
+			i= i+n1;
+		} while (n1 != 0);
+			System.out.println(" --Fin del programa-- ");
+		sc.close();
+	}
+
+	public static void ejercicio15() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe un número");
+		int n1 = sc.nextInt();
+		int cifras = 0;
+		while (n1!= 0) {
+			n1 = n1 /10;
+			cifras++;
+			}			
+		System.out.print("Tiene " + cifras + " cifra" );
+		System.out.println((cifras==1)? "":"s");
+		sc.close();
+	}
+
+	public static void ejercicio16() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe un número entero");
+		for (int n1 = sc.nextInt();n1>0; n1--) {
+			System.out.print("*");
+		}
+		sc.close();
+	}
+
+	public static void ejercicio17() {
+		for (int i = 30; i>0; i--) {
+			System.out.println((i%3!=0)?i:"");
+		}
+	}
+
+	public static void ejercicio18() {
+		for (int i = 0; i <=100; ) {  
+			System.out.println(i);
+			i++;
+			i++;
+			i++;
+			i++;
+			i++;
+		}
+	}
+
+	public static void ejercicio19() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Dime un numero");
+		int n1 = sc.nextInt();
+		for (int n2 = 1; n2 <= n1 ;n2++) {
+			System.out.print((n2!=n1)?n2 + ", ":n2);
+		}
+		sc.close();
+	}
+
+	public static void ejercicio20() {
+		
+		
+	
+		
+	}
+
+	public static void ejercicio21() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe un número para saber sus divisores");
+		int n1 = sc.nextInt();
+		for (int n2 = n1; n2>=1; n2--) {
+		System.out.print((n1%n2==0)?n2 + " ": "");
+		}
+		sc.close();
+	}
+
+
+	public static void main(String[] args) {
+		//ejercicio2();
+		//ejercicio3();
+		//ejercicio4();
+		//ejercicio5();
+		//ejercicio6();
+		//ejercicio7();
+		//ejercicio8();
+		//ejercicio9();
+		//ejercicio10();
+		ejercicio11();
+		//ejercicio12();
+		//ejercicio13();
+		//ejercicio14();
+		//ejercicio15();
+		//ejercicio16();
+		//ejercicio17();
+		//ejercicio18();
+		//ejercicio19();
+						//ejercicio20();
+		//ejercicio21();
+		//ejercicio22();
+		//ejercicio23();
+		//ejercicio24();
+		//ejercicio25();
+		//ejercicio26();
+		//ejercicio27();
+		//ejercicio28();
+		//ejercicio29();
+		//ejercicio30();
+		
+		
+		
+		
+	}
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2047)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3853)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1953)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1990)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3095)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3159)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3046)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3390)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1534)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:344)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1272)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:868)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:294)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:286)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:199)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoveredASTNode(JavadocHover.java:1003)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getInfoText(JavadocHover.java:799)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:743)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 2 2022-10-05 18:07:41.788
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.core.manipulation".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2047)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3853)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1953)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1990)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3095)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3159)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3046)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3390)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1534)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:344)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1272)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:868)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:294)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:286)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:199)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoveredASTNode(JavadocHover.java:1003)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getInfoText(JavadocHover.java:799)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:743)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 0 2022-10-05 18:07:41.788
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2047)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3853)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1953)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1990)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3095)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3159)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3046)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3390)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1534)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:344)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1272)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:868)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:294)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:286)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:199)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoveredASTNode(JavadocHover.java:1003)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getInfoText(JavadocHover.java:799)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:743)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+!SESSION 2022-10-05 18:18:44.137 -----------------------------------------------
+eclipse.buildId=4.25.0.I20220831-1800
+java.version=11.0.16
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.m2e.apt.core 4 0 2022-10-05 18:18:45.255
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.apt.core [590]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.jdt; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.jdt; bundle-version="2.0.1.20220901-1459"; singleton:="true"
+       org.eclipse.m2e.jdt [600]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+              org.eclipse.m2e.core [595]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.apt.ui 4 0 2022-10-05 18:18:45.257
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.apt.ui [591]
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.apt.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.apt.core; bundle-version="2.0.0.20220706-1958"; singleton:="true"
+       org.eclipse.m2e.apt.core [590]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.jdt; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.jdt; bundle-version="2.0.1.20220901-1459"; singleton:="true"
+              org.eclipse.m2e.jdt [600]
+                Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+                     org.eclipse.m2e.core [595]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.binaryproject 4 0 2022-10-05 18:18:45.259
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.binaryproject [593]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+       org.eclipse.m2e.core [595]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.sourcelookup; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.sourcelookup; bundle-version="2.0.0.20220705-1608"; singleton:="true"
+       org.eclipse.m2e.sourcelookup [615]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.launching; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.launching; bundle-version="2.0.1.20220828-2046"; singleton:="true"
+              org.eclipse.m2e.launching [602]
+                Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.jdt; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.jdt; bundle-version="2.0.1.20220901-1459"; singleton:="true"
+       org.eclipse.m2e.jdt [600]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.binaryproject.ui 4 0 2022-10-05 18:18:45.263
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.binaryproject.ui [594]
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.binaryproject; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.binaryproject; bundle-version="2.0.0.20220705-1221"; singleton:="true"
+       org.eclipse.m2e.binaryproject [593]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+              org.eclipse.m2e.core [595]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core.ui; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core.ui; bundle-version="2.0.0.20220726-0935"; singleton:="true"
+       org.eclipse.m2e.core.ui [596]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.model.edit; bundle-version="[2.0.0,3.0.0)"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.eclipse.m2e.model.edit; bundle-version="2.0.0.20220703-1731"; singleton:="true"
+              org.eclipse.m2e.model.edit [607]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.core 4 0 2022-10-05 18:18:45.264
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.core [595]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.core.ui 4 0 2022-10-05 18:18:45.267
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.core.ui [596]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.model.edit; bundle-version="[2.0.0,3.0.0)"; visibility:="reexport"
+    -> Bundle-SymbolicName: org.eclipse.m2e.model.edit; bundle-version="2.0.0.20220703-1731"; singleton:="true"
+       org.eclipse.m2e.model.edit [607]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+       org.eclipse.m2e.core [595]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.discovery 4 0 2022-10-05 18:18:45.269
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.discovery [597]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+       org.eclipse.m2e.core [595]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core.ui; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core.ui; bundle-version="2.0.0.20220726-0935"; singleton:="true"
+       org.eclipse.m2e.core.ui [596]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.editor 4 0 2022-10-05 18:18:45.274
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.editor [598]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+       org.eclipse.m2e.core [595]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core.ui; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core.ui; bundle-version="2.0.0.20220726-0935"; singleton:="true"
+       org.eclipse.m2e.core.ui [596]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.discovery; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.discovery; bundle-version="2.0.0.20220705-1608"; singleton:="true"
+       org.eclipse.m2e.discovery [597]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.model.edit; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.model.edit; bundle-version="2.0.0.20220703-1731"; singleton:="true"
+       org.eclipse.m2e.model.edit [607]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.jdt 4 0 2022-10-05 18:18:45.276
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.jdt [600]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+       org.eclipse.m2e.core [595]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.jdt.ui 4 0 2022-10-05 18:18:45.280
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.jdt.ui [601]
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+       org.eclipse.m2e.core [595]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.jdt; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.jdt; bundle-version="2.0.1.20220901-1459"; singleton:="true"
+       org.eclipse.m2e.jdt [600]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.launching 4 0 2022-10-05 18:18:45.283
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.launching [602]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core.ui; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core.ui; bundle-version="2.0.0.20220726-0935"; singleton:="true"
+       org.eclipse.m2e.core.ui [596]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+              org.eclipse.m2e.core [595]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.model.edit 4 0 2022-10-05 18:18:45.285
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.model.edit [607]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.pde.connector 4 0 2022-10-05 18:18:45.288
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.pde.connector [608]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+       org.eclipse.m2e.core [595]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.jdt; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.jdt; bundle-version="2.0.1.20220901-1459"; singleton:="true"
+       org.eclipse.m2e.jdt [600]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.pde.target 4 0 2022-10-05 18:18:45.290
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.pde.target [609]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+       org.eclipse.m2e.core [595]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.pde.ui 4 0 2022-10-05 18:18:45.292
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.pde.ui [610]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.pde.target; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.pde.target; bundle-version="2.0.1.20220822-2010"; singleton:="true"
+       org.eclipse.m2e.pde.target [609]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+              org.eclipse.m2e.core [595]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.profiles.core 4 0 2022-10-05 18:18:45.294
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.profiles.core [611]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+       org.eclipse.m2e.core [595]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.profiles.ui 4 0 2022-10-05 18:18:45.297
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.profiles.ui [612]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core.ui; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core.ui; bundle-version="2.0.0.20220726-0935"; singleton:="true"
+       org.eclipse.m2e.core.ui [596]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+              org.eclipse.m2e.core [595]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.profiles.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.profiles.core; bundle-version="2.0.0.20220703-1731"; singleton:="true"
+       org.eclipse.m2e.profiles.core [611]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.refactoring 4 0 2022-10-05 18:18:45.301
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.refactoring [613]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.model.edit; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.model.edit; bundle-version="2.0.0.20220703-1731"; singleton:="true"
+       org.eclipse.m2e.model.edit [607]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+       org.eclipse.m2e.core [595]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core.ui; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core.ui; bundle-version="2.0.0.20220726-0935"; singleton:="true"
+       org.eclipse.m2e.core.ui [596]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.sourcelookup 4 0 2022-10-05 18:18:45.304
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.sourcelookup [615]
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.launching; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.launching; bundle-version="2.0.1.20220828-2046"; singleton:="true"
+       org.eclipse.m2e.launching [602]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core.ui; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core.ui; bundle-version="2.0.0.20220726-0935"; singleton:="true"
+              org.eclipse.m2e.core.ui [596]
+                Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+                     org.eclipse.m2e.core [595]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.sourcelookup.ui 4 0 2022-10-05 18:18:45.307
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.sourcelookup.ui [616]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core.ui; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core.ui; bundle-version="2.0.0.20220726-0935"; singleton:="true"
+       org.eclipse.m2e.core.ui [596]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+              org.eclipse.m2e.core [595]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.binaryproject; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.binaryproject; bundle-version="2.0.0.20220705-1221"; singleton:="true"
+       org.eclipse.m2e.binaryproject [593]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.sourcelookup; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.sourcelookup; bundle-version="2.0.0.20220705-1608"; singleton:="true"
+       org.eclipse.m2e.sourcelookup [615]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.launching; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.launching; bundle-version="2.0.1.20220828-2046"; singleton:="true"
+              org.eclipse.m2e.launching [602]
+                Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.wtp 4 0 2022-10-05 18:18:45.311
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.wtp [618]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.jdt; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.jdt; bundle-version="2.0.1.20220901-1459"; singleton:="true"
+       org.eclipse.m2e.jdt [600]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+              org.eclipse.m2e.core [595]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.mavenarchiver; bundle-version="2.0.1"
+    -> Bundle-SymbolicName: org.eclipse.m2e.mavenarchiver; bundle-version="2.0.1.20220805-1816"; singleton:="true"
+       org.eclipse.m2e.mavenarchiver [606]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.jdt; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.jdt; bundle-version="2.0.1.20220901-1459"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.wtp.overlay; visibility:="reexport"
+    -> Bundle-SymbolicName: org.eclipse.m2e.wtp.overlay; bundle-version="1.5.0.20220805-2025"; singleton:="true"
+       org.eclipse.m2e.wtp.overlay [622]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.wtp.jaxrs 4 0 2022-10-05 18:18:45.313
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.wtp.jaxrs [619]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+       org.eclipse.m2e.core [595]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.wtp
+    -> Bundle-SymbolicName: org.eclipse.m2e.wtp; bundle-version="1.5.2.20220906-1452"; singleton:="true"
+       org.eclipse.m2e.wtp [618]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.wtp.jpa 4 0 2022-10-05 18:18:45.316
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.wtp.jpa [620]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+       org.eclipse.m2e.core [595]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.wtp; bundle-version="1.2.0"
+    -> Bundle-SymbolicName: org.eclipse.m2e.wtp; bundle-version="1.5.2.20220906-1452"; singleton:="true"
+       org.eclipse.m2e.wtp [618]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.wtp.jsf 4 0 2022-10-05 18:18:45.318
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.wtp.jsf [621]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.wtp
+    -> Bundle-SymbolicName: org.eclipse.m2e.wtp; bundle-version="1.5.2.20220906-1452"; singleton:="true"
+       org.eclipse.m2e.wtp [618]
+         Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+              org.eclipse.m2e.core [595]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.core; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.m2e.core; bundle-version="2.0.3.20220904-1703"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.wtp.overlay 4 0 2022-10-05 18:18:45.319
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.wtp.overlay [622]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.wtp.overlay.ui 4 0 2022-10-05 18:18:45.322
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.wtp.overlay.ui [623]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.m2e.wtp.overlay
+    -> Bundle-SymbolicName: org.eclipse.m2e.wtp.overlay; bundle-version="1.5.0.20220805-2025"; singleton:="true"
+       org.eclipse.m2e.wtp.overlay [622]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm4e.core 4 0 2022-10-05 18:18:45.334
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm4e.core [731]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm4e.languageconfiguration 4 0 2022-10-05 18:18:45.336
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm4e.languageconfiguration [732]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.0.202206232130"
+       org.eclipse.tm4e.core [731]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry
+    -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.0.202206241118"; singleton:="true"
+       org.eclipse.tm4e.registry [733]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.0"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.0.202206232130"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui; bundle-version="0.6.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.0.202206241118"; singleton:="true"
+       org.eclipse.tm4e.ui [734]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.0"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.0.202206232130"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm4e.registry 4 0 2022-10-05 18:18:45.339
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm4e.registry [733]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.0.202206232130"
+       org.eclipse.tm4e.core [731]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm4e.ui 4 0 2022-10-05 18:18:45.341
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm4e.ui [734]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.0.202206232130"
+       org.eclipse.tm4e.core [731]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.6.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.0.202206241118"; singleton:="true"
+       org.eclipse.tm4e.registry [733]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.0"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.0.202206232130"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.wildwebdeveloper 4 0 2022-10-05 18:18:45.377
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.wildwebdeveloper [766]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.1.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.0.202206241118"; singleton:="true"
+       org.eclipse.tm4e.registry [733]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.0"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.0.202206232130"
+              org.eclipse.tm4e.core [731]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui; bundle-version="0.1.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.0.202206241118"; singleton:="true"
+       org.eclipse.tm4e.ui [734]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.0"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.0.202206232130"
+  Unresolved requirement: Require-Bundle: org.eclipse.wildwebdeveloper.embedder.node; bundle-version="0.2.0"
+    -> Bundle-SymbolicName: org.eclipse.wildwebdeveloper.embedder.node; bundle-version="0.3.0.202206231201"
+       org.eclipse.wildwebdeveloper.embedder.node [767]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.languageconfiguration
+    -> Bundle-SymbolicName: org.eclipse.tm4e.languageconfiguration; bundle-version="0.5.0.202206241118"; singleton:="true"
+       org.eclipse.tm4e.languageconfiguration [732]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.0"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.0.202206232130"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.wildwebdeveloper.embedder.node 4 0 2022-10-05 18:18:45.379
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.wildwebdeveloper.embedder.node [767]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 4 0 2022-10-05 18:18:45.381
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.wildwebdeveloper.xml [769]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.registry; bundle-version="0.3.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.registry; bundle-version="0.6.0.202206241118"; singleton:="true"
+       org.eclipse.tm4e.registry [733]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.0"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.0.202206232130"
+              org.eclipse.tm4e.core [731]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.languageconfiguration; bundle-version="0.1.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.languageconfiguration; bundle-version="0.5.0.202206241118"; singleton:="true"
+       org.eclipse.tm4e.languageconfiguration [732]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.0"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.0.202206232130"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm4e.ui; bundle-version="0.1.0"
+    -> Bundle-SymbolicName: org.eclipse.tm4e.ui; bundle-version="0.6.0.202206241118"; singleton:="true"
+       org.eclipse.tm4e.ui [734]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm4e.core; bundle-version="0.5.0"
+           -> Bundle-SymbolicName: org.eclipse.tm4e.core; bundle-version="0.5.0.202206232130"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.m2e.logback.configuration 4 0 2022-10-05 18:18:45.451
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.m2e.logback.configuration [604]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=17))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1788)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jface 2 0 2022-10-05 18:18:47.658
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-10-05 18:18:47.658
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-10-05 18:18:47.658
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.edit.text.java.rename.element"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.ui.edit.rename"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-10-05 18:18:50.355
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\victo'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
