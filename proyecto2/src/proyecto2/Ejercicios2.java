@@ -271,22 +271,28 @@ public class Ejercicios2 {
 		System.out.printf("La entrada cuesta: %.0f€\n", entrada);
 		System.out.println("¿Qué edad tienes?");
 		int edad = sc.nextInt();
+		
 		if (edad<MAYORIA_EDAD) {
 			entrada = entrada - (entrada*DESCUENTO_JOVEN);
 			System.out.println("Tienes un descuento del 25%");
 			System.out.printf("La entrada te cuesta: %.2f€", entrada);	
+			
 		}else if (edad>=MAYORIA_EDAD && edad<JUBILADO) {
 			System.out.println("¿Eres socio? si o no");
 			String n1 = sc.next();
+			
 			if (n1.toLowerCase().equals("si")||n1.toLowerCase().equals("sí")) {
 				entrada = entrada - (entrada*DESCUENTO_SOCIO);
 				System.out.println("Tienes un descuento del 40%");
 				System.out.printf("La entrada te cuesta: %.0f€", entrada);
+				
 			}else if (n1.toLowerCase().equals("no")) {
 				System.out.printf("La entrada te cuesta: %.0f€", entrada);
+				
 			}else {
 				System.out.println("Por favor, debe escribir si o no");
-			}		
+			}	
+			
 		}else {
 			entrada = entrada - (entrada*DESCUENTO_JUBILADO);
 			System.out.println("Tienes un descuento del 75%");
