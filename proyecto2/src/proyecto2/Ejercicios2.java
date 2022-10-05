@@ -355,7 +355,7 @@ public class Ejercicios2 {
 
 	public static void ejercicio21() {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Escribe un número");
+		System.out.println("Escribe un número para saber sus divisores");
 		int n1 = sc.nextInt();
 		for (int n2 = n1; n2>=1; n2--) {
 		System.out.print((n1%n2==0)?n2 + " ": "");

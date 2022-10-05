@@ -1,5 +1,6 @@
 package proyecto2;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Iterativas {
@@ -107,7 +108,135 @@ public class Iterativas {
 			i++;
 		}
 	}
-
+	
+	public static void doWhile1() {
+		
+		Scanner sc = new Scanner(System.in);
+		int adivina = new Random().nextInt(10) +1; //Genera un numero entre 1 y 10; (10)genera del 0 y 9 por eso +1 o poner directmente (11)
+		int intentos = 0;
+		int num;
+		do {
+			System.out.println("Adivina el número del 1 al 10 (te queda" + (((3-intentos)==1)?" ":"n ") + (3-intentos) + " intento" + (((3-intentos)==1)?")":"s)"));
+			num = sc.nextInt();
+			intentos++;
+		} while (adivina !=num && intentos<3);
+		if (adivina == num) {
+			System.out.println("Has acertado");	
+		}else {
+			System.out.println("Has fallado, el numero era "+ adivina);
+		}
+		sc.close();
+	}
+	
+	public static void whileIgualQueDoWhile1() {
+		
+		Scanner sc = new Scanner(System.in);
+		int adivina = new Random().nextInt(10) +1;
+		int intentos = 0;
+		int num = -1; //declarar un valor fuera del rango de variables/ distinto de adivina(numero random) 
+		
+		while (adivina !=num && intentos<3) {
+			System.out.println("Adivina el número del 1 al 10 (te queda" + (((3-intentos)==1)?" ":"n ") + (3-intentos) + " intento" + (((3-intentos)==1)?")":"s)"));
+			num = sc.nextInt();
+			intentos++;
+		}
+		if (adivina == num) {
+			System.out.println("Has acertado");	
+		}else {
+			System.out.println("Has fallado, el numero era "+ adivina);
+		}
+		sc.close();
+	}
+	
+	public static void forIgualQueDoWhile1() {
+		
+		Scanner sc = new Scanner(System.in);
+		int adivina = new Random().nextInt(10) +1;
+		
+		int num = -1;
+		
+		for (int intentos = 0; adivina !=num && intentos<3;intentos++) {
+			System.out.println("Adivina el número del 1 al 10 (te queda" + (((3-intentos)==1)?" ":"n ") + (3-intentos) + " intento" + (((3-intentos)==1)?")":"s)"));
+			num = sc.nextInt();
+		}
+		if (adivina == num) {
+			System.out.println("Has acertado");	
+		}else {
+			System.out.println("Has fallado, el numero era "+ adivina);
+		}
+		sc.close();
+	}
+	
+	public static void forIgualQueDoWhile1BreakContinue() {
+		
+		Scanner sc = new Scanner(System.in);
+		int adivina = new Random().nextInt(10) +1;
+		
+		int num = -1;
+		
+		for (int intentos = 0; intentos<3;intentos++) { //solo una condición
+			System.out.println("Adivina el número del 1 al 10 (te queda" + (((3-intentos)==1)?" ":"n ") + (3-intentos) + " intento" + (((3-intentos)==1)?")":"s)"));
+			num = sc.nextInt();
+			if (adivina==num) {
+				break;
+			}else {
+				continue;
+			}
+		}
+		if (adivina == num) {
+			System.out.println("Has acertado");	
+		}else {
+			System.out.println("Has fallado, el numero era "+ adivina);
+		}
+		sc.close();
+		
+		
+	}
+	public static void ejemploMenuWhile() { 
+		
+		Scanner sc = new Scanner(System.in);
+		int opcion=-1;
+		while (opcion!=0) {
+			System.out.println("1.jugar");
+			System.out.println("2.guardar");
+			System.out.println("3.Opciones");
+			System.out.println("0.Salir");
+			System.out.println("Introduzca opción");
+			opcion= sc.nextInt();	
+		}sc.close();
+	}
+	
+	public static void ejemploMenuSwitch() { 
+		
+		Scanner sc = new Scanner(System.in);
+		int opcion = -1;
+		while (opcion!=0) {
+			System.out.println("1.jugar");
+			System.out.println("2.guardar");
+			System.out.println("3.Opciones");
+			System.out.println("0.Salir");
+			System.out.println("Introduzca opción");
+			opcion= sc.nextInt(); //cpger opcion
+			switch (opcion) { //tratar opcion
+			case 1:
+				System.out.println("Has elegido jugar");
+				break;
+			case 2:
+				System.out.println("Has elegido guardar");
+				break;
+			case 3:
+				System.out.println("Has elegido Opciones");
+				break;
+			case 0:
+				System.out.println("Gracias por jugar");
+				break;
+			default:
+				System.out.println("Esa no es una opción");
+				break;
+			}	
+		}sc.close();
+	}
+	
 	public static void offTopicEnteros() { 
 		
 		//int numero = 2147483647;
@@ -115,7 +244,6 @@ public class Iterativas {
 		System.out.println(numero);
 		numero++;
 		System.out.println(numero);
-		
 	}
 		
 	public static void main(String[] args) {
@@ -127,8 +255,16 @@ public class Iterativas {
 		//infinito1();
 		//infinito2();
 		//while1();
-		whileComoFor();
+		//whileComoFor();
 		//whileComoFor2();
+		//doWhile1();
+		//whileIgualQueDoWhile1();
+		//forIgualQueDoWhile1();
+		//ejemploMenuWhile();
+		//ejemploMenuSwitch();
+		//forIgualQueDoWhile1BreakContinue();
+	
+		
 		//offTopicEnteros();
 	}
 }
