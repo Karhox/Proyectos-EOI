@@ -127,7 +127,7 @@ public class Iterativas {
 		//infinito1();
 		//infinito2();
 		//while1();
-		//whileComoFor();
+		whileComoFor();
 		//whileComoFor2();
 		//offTopicEnteros();
 	}

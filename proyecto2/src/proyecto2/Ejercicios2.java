@@ -250,13 +250,119 @@ public class Ejercicios2 {
 		}
 		sc.close();
 	}
+	
+	public static void ejercicio12() {
+		
+		Scanner sc = new Scanner(System.in);
+		double entrada = 50;
+		System.out.printf("La entrada cuesta: %.0f€\n", entrada);
+		System.out.println("¿Qué edad tienes?");
+		int edad = sc.nextInt();
+		if (edad<18) {
+			entrada = entrada - (entrada*25/100);
+			System.out.println("Tienes un descuento del 25%");
+			System.out.printf("La entrada te cuesta: %.2f€", entrada);
+		}else if (edad>=65) {
+			System.out.println("¿Eres socio? si o no");
+			String n1 = sc.next();
+			if (n1.equals("si")) {
+				entrada = entrada - (entrada*40/100);
+				System.out.println("Tienes un descuento del 40%");
+				System.out.printf("La entrada te cuesta: %.0f€", entrada);
+			}else if (n1.equals("no")) {
+				System.out.printf("No tienes nigún descuento disponible, son  %.0f€", entrada);
+			}else {
+				System.out.println("Por favor, debe escribir si o no");
+			}	
+		}else System.out.printf("No tienes nigún descuento disponible, son  %.0f€", entrada);	
+		sc.close();
+	}
 
 	public static void ejercicio13() {
 		
 		for (int i = 20; i>0; i--) {
 			System.out.println(i);
 		}
+	
+		int i= 20;
+		while(i > 0) { 
+			System.out.println(i); 
+			i--;
+			}
+		}
+	public static void ejercicio14() {
+		
+			
+		
 	}
+
+	public static void ejercicio15() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe un número");
+		int n1 = sc.nextInt();
+		int cifras = 0;
+		while (n1!= 0) {
+			n1 = n1 /10;
+			cifras++;
+			}			
+		System.out.print("Tiene " + cifras + " cifra" );
+		System.out.println((cifras==1)? "":"s");
+		sc.close();
+	}
+
+	public static void ejercicio16() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe un número entero");
+		for (int n1 = sc.nextInt();n1>0; n1--) {
+			System.out.print("*");
+		}
+		sc.close();
+	}
+
+	public static void ejercicio17() {
+		for (int i = 30; i>0; i--) {
+			System.out.println((i%3!=0)?i:"");
+		}
+	}
+
+	public static void ejercicio18() {
+		for (int i = 0; i <=100; ) {  
+			System.out.println(i);
+			i++;
+			i++;
+			i++;
+			i++;
+			i++;
+		}
+	}
+
+	public static void ejercicio19() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Dime un numero");
+		int n1 = sc.nextInt();
+		for (int n2 = 1; n2 <= n1 ;n2++) {
+			System.out.print((n2!=n1)?n2 + ", ":n2);
+		}
+		sc.close();
+	}
+
+	public static void ejercicio20() {
+		
+		
+	
+		
+	}
+
+	public static void ejercicio21() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Escribe un número");
+		int n1 = sc.nextInt();
+		for (int n2 = n1; n2>=1; n2--) {
+		System.out.print((n1%n2==0)?n2 + " ": "");
+		}
+		sc.close();
+	}
+
 
 	public static void main(String[] args) {
 		//ejercicio2();
@@ -268,8 +374,28 @@ public class Ejercicios2 {
 		//ejercicio8();
 		//ejercicio9();
 		//ejercicio10();
-		ejercicio11();
+		//ejercicio11();
+		//ejercicio12();
 		//ejercicio13();
+						//ejercicio14();
+		//ejercicio15();
+		//ejercicio16();
+		//ejercicio17();
+		//ejercicio18();
+		//ejercicio19();
+						//ejercicio20();
+		ejercicio21();
+		//ejercicio22();
+		//ejercicio23();
+		//ejercicio24();
+		//ejercicio25();
+		//ejercicio26();
+		//ejercicio27();
+		//ejercicio28();
+		//ejercicio29();
+		//ejercicio30();
+		
+		
 		
 		
 	}
