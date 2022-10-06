@@ -1,6 +1,8 @@
 package colecciones;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Arrays1 {
 
@@ -101,16 +103,58 @@ public class Arrays1 {
 		System.out.println(Arrays.toString(nums2)); 
 	
 		
-		String[] meses = {"Enero","Febrero","Marzo","Abril","Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"};
+		String[] meses = {"Enero","Febrero","Marzo","abril","Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"};
 		
-		Arrays.sort(meses); //orden lexicográfico
+		Arrays.sort(meses); //orden lexicográfico ~ normal por ascii, mayúsculas antes que minúsculas
 		System.out.println(Arrays.toString(meses));
 		
+		Arrays.sort(meses, String.CASE_INSENSITIVE_ORDER); //orden case insensitive ~ No cuenta mayus y minus
+		System.out.println(Arrays.toString(meses));
 	
+		Arrays.sort(meses, Collections.reverseOrder()); // orden inverso lexicográfico
+		System.out.println(Arrays.toString(meses));
+		
+		Arrays.sort(meses, String.CASE_INSENSITIVE_ORDER.reversed()); // orden inverso insensitive
+		System.out.println(Arrays.toString(meses));
+		
+		//Clase comparator
+		
+		Arrays.sort(meses,Comparator.comparingInt(String::length)); //Ordenar tamaño de palabras de mas corta a más larga
+		System.out.println(Arrays.toString(meses));
+		
+		Arrays.sort(meses,Comparator.comparingInt(String::length).reversed()); //Ordenar tamaño de palabras de más larga a más corta
+		System.out.println(Arrays.toString(meses));
+		
+		//Con nuestro propio comparator
+		
+		Arrays.sort(meses, (a,b)->Integer.compare(a.length(), b.length())); //Ordenar tamaño de palabras de otra forma c a l
+		System.out.println(Arrays.toString(meses));
+		
+		Arrays.sort(meses, (a,b)->Integer.compare(b.length(), a.length())); //Ordenar tamaño de palabras de larga a corta 
+		System.out.println(Arrays.toString(meses));
+		
+		Arrays.sort(meses, (a,b)->Integer.compare(a.length(), -b.length())); //Ordenar tamaño de palabras de otra forma
+		System.out.println(Arrays.toString(meses));
+
 	}	
+	
+	public static void CrearArrayApartirDeOtro() {
+		
+		String[] meses = {"Enero","Febrero","Marzo","abril","Mayo", "Junio", "Julio", "Agosto","Septiembre","Octubre","Noviembre","Diciembre"};
+		int [] letrasMeses = new int [meses.length]; //mismo tamaño que meses
+		
+		for (int i=0; i<meses.length; i++) {
+			letrasMeses[i] = meses[i].length();
+		}
+		for (int mes : letrasMeses) { //imprimir el array creado
+			System.out.println(mes);
+		}
+	}
+	
 	public static void main(String[] args) {
 		//ejemplo1();
-		ordenar();
+		//ordenar();
+		CrearArrayApartirDeOtro();
 	}
 }
 
