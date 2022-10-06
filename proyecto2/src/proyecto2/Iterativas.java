@@ -236,6 +236,15 @@ public class Iterativas {
 			}	
 		}sc.close();
 	}
+	public static void foranidado() { //for anidado
+		for (int tabla = 1; tabla <=10; tabla++) {
+			System.out.println("Tabla del " + tabla);
+			for(int numero = 1; numero<=10; numero++) {
+				System.out.println(tabla + "*" + numero + "= " + (tabla*numero));
+			}
+			System.out.println("Fin de la tabla de "+tabla +"\n");
+		}
+	}
 	
 	public static void offTopicEnteros() { 
 		
@@ -263,7 +272,7 @@ public class Iterativas {
 		//ejemploMenuWhile();
 		//ejemploMenuSwitch();
 		//forIgualQueDoWhile1BreakContinue();
-	
+		foranidado();
 		//offTopicEnteros();
 	}
 }

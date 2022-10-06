@@ -170,7 +170,6 @@ public class Arrays1 {
 		tabla[3][0] = 9;
 		tabla[3][1] = 0;
 		tabla[3][2] = 8;
-		int[][] tabla2 = { { 5, 4, 9 }, { 8, 5, 1000 }, { -2, 14, 5 }, { 9, 0, 8 } };
 
 		// recorrer las tablas
 		//int alto = tabla.length;
@@ -225,7 +224,7 @@ public class Arrays1 {
 		//crearArrayApartirDeOtro();
 		//arraysMultidimensionales();
 		//calculoNotasMedias();
-		tablasMultiplicar();
+		//tablasMultiplicar();
 	}
 }
 
