@@ -329,6 +329,7 @@ public class Ejercicios2 {
 	}
 
 	public static void ejercicio15() {
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Escribe un número");
 		int n1 = sc.nextInt();
@@ -343,6 +344,7 @@ public class Ejercicios2 {
 	}
 
 	public static void ejercicio16() {
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Escribe un número entero");
 		for (int n1 = sc.nextInt();n1>0; n1--) {
@@ -352,12 +354,14 @@ public class Ejercicios2 {
 	}
 
 	public static void ejercicio17() {
+		
 		for (int i = 30; i>0; i--) {
 			System.out.println((i%3!=0)?i:"");
 		}
 	}
 
 	public static void ejercicio18() {
+		
 		for (int i = 0; i <=100; ) {  
 			System.out.println(i);
 			i++;
@@ -369,6 +373,7 @@ public class Ejercicios2 {
 	}
 
 	public static void ejercicio19() {
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Dime un numero");
 		int n1 = sc.nextInt();
@@ -380,12 +385,25 @@ public class Ejercicios2 {
 
 	public static void ejercicio20() {
 		
+		Scanner sc = new Scanner(System.in);
+		int n1=1;
+		while (true) {
+			System.out.println("Introduce un número entero: ");	
+			n1 = sc.nextInt();
+			if (n1>0) {
+				System.out.println((n1%10==0)?"El número es múltiplo de 10":"El número no es múltiple de 10");
+				continue;
+			} else if (n1<0) 
+				continue;
+			else
+				System.out.println("--Fin del programa--");
+				break;
+		}
+		sc.close();
+	}	
 		
-	
-		
-	}
-
 	public static void ejercicio21() {
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Escribe un número para saber sus divisores");
 		int n1 = sc.nextInt();
@@ -407,15 +425,18 @@ public class Ejercicios2 {
 		//ejercicio9();
 		//ejercicio10();
 		//ejercicio11();
-		ejercicio12();
+		//ejercicio12();
 		//ejercicio13();
 		//ejercicio14();
-		//ejercicio15();
+		ejercicio15();
 		//ejercicio16();
 		//ejercicio17();
 		//ejercicio18();
 		//ejercicio19();
-						//ejercicio20();
+		//ejercicio20();
+		
+		
+		
 		//ejercicio21();
 		//ejercicio22();
 		//ejercicio23();
