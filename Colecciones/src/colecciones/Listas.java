@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Scanner;
 
 public class Listas {
 	
@@ -28,6 +29,7 @@ public class Listas {
 		nombres.forEach(e -> System.out.println(e)); // Es lo mismo que lo anterior e = elemento en vez del singular en for
 		nombres.forEach(e -> System.out.println(e + " García"));
 		nombres.forEach(e -> System.out.println(e.length())); //4, 4, 4, 7 : longitud de la palabra
+		nombres.forEach(e -> System.out.println(e));
 		
 		// eliminar
 		nombres.remove(1); //borro posicionalmente
@@ -42,7 +44,7 @@ public class Listas {
 		// tamaño lista
 		System.out.println("El tamaño de la lista es: "+ nombres.size());
 		
-		// conversión lista a array
+		// conversión lista a array (poco frecuente por limitaciones estáticas)
 		String[] nombresArray = new String[nombres.size()];
 		nombres.toArray(nombresArray);
 		System.out.println("impresion de la lista");
@@ -82,18 +84,79 @@ public class Listas {
 		alumnosEoi.sort(String.CASE_INSENSITIVE_ORDER.reversed()); //Alfabeto inverso sin tener cuenta minus mayus
 		System.out.println(alumnosEoi);
 	}
+	
 	public static void buscarlista() {
 		List<String> meses = new ArrayList<String>(Arrays.asList("Enero", "febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"));
 		if (meses.contains("Enero"))
 			System.out.println("Enero existe en la lista");
+	
 		if(meses.containsAll(new ArrayList<String>(Arrays.asList("Enero","febrero"))))
 			System.out.println("Enero y Febrero existen en la lista");
-		
 	}
+	
+	public static void reemplazarLista() {
+		List<String> meses = new ArrayList<String>(Arrays.asList("Enero", "febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"));
+		meses.replaceAll(e->e+" mes"); //Hace una operación a todos los elementos de una lista
+		meses.forEach(e->System.out.println(e));
+		
+		meses = Arrays.asList("Enero", "febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+		meses.replaceAll(e->e.substring(0, 1).toUpperCase() + e.substring(1).toLowerCase());
+		
+		// Buscar los elementos que queremos y cambiar el contenido de su posición
+		meses.indexOf("Julio");
+		meses.set(meses.indexOf("Julio"), "Verano");
+		meses.set(meses.indexOf("Agosto"), "Verano");
+		meses.set(11, "December");
+		meses.forEach(e->System.out.println(e));
+	}
+	
+	public static void algunasOperacionesCadenas() {
+		String cadena = "Hola mundo";
+		System.out.println(cadena.length());
+		cadena.replace("Hola", "hola"); //No cambia por la inmutabilidad de la cadena
+		System.out.println(cadena); 
+		cadena = cadena.replace("Hola", "hola"); //ah si si
+		System.out.println(cadena);
+		System.out.println(cadena.toUpperCase()); //imprime la cadena pero no la cambia
+		System.out.println(cadena.substring(0, 1).toUpperCase()); //Pilla la primera letra en mayúscula
+		cadena = cadena.substring(0, 1).toUpperCase() + cadena.substring(1).toLowerCase(); //capitalizar una cadena
+		System.out.println(cadena);
+		
+		//Capitalizar
+		List<String> meses = new ArrayList<String>(Arrays.asList("enero", "febrero", "MarZo", "abRil", "Mayo", "Junio", "julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"));
+		meses.replaceAll(e->e.substring(0, 1).toUpperCase() + e.substring(1).toLowerCase());
+		meses.forEach(e->System.out.println(e));
+		
+		//Filtrar elementos en la cadena
+		meses.stream()
+			.filter(e->e.equals("Julio") || e.equals("Agosto"))
+			.forEach(e -> System.out.println(e));
+		
+		String cadena2="Ah Esta es una cadena más larga que la anterior";
+		//Encontrar todas las 'a' de esta cadena
+		for (int i=0; i < cadena2.length(); i++) {
+			if (cadena2.toLowerCase().charAt(i)=='a'|| cadena2.toLowerCase().charAt(i)=='á'){ //cambia la cadena a minus para encontrar A
+				System.out.println("Encontrada una 'a' en la posición: " + i);
+			}
+		}
+	}
+		
+	public static void buscarSiguiente() {
+		Scanner sc = new Scanner(System.in);
+		String cadena="Esta es una cadena más larga que la Anterior";
+		System.out.println(cadena);
+		System.out.println("Quieres buscar la siguiente a? y / n ");
+		String buscar = sc.next();
+		
+	}	
 		
 	public static void main(String[] args) {
 	//ejemplo1();
-	buscarlista();
+	//buscarlista();
+	reemplazarLista();
+	//algunasOperacionesCadenas();
+	//buscarSiguiente();
+	
 	}
 }
 
