@@ -99,7 +99,7 @@ public class Listas {
 		meses.replaceAll(e->e+" mes"); //Hace una operación a todos los elementos de una lista
 		meses.forEach(e->System.out.println(e));
 		
-		meses = Arrays.asList("Enero", "febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+		meses = new ArrayList<String>(Arrays.asList("Enero", "febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"));		
 		meses.replaceAll(e->e.substring(0, 1).toUpperCase() + e.substring(1).toLowerCase());
 		
 		// Buscar los elementos que queremos y cambiar el contenido de su posición
@@ -142,20 +142,91 @@ public class Listas {
 	}
 		
 	public static void buscarSiguiente() {
+// dada una cadena, pregunta al usuario la subcadena a buscar y muéstrale esa subcadena hasta el final
+// luego pregunta si quiere buscar la siguiente ocurrencia y mientras diga que sí, sácale el resultado.
 		Scanner sc = new Scanner(System.in);
 		String cadena="Esta es una cadena más larga que la Anterior";
-		System.out.println(cadena);
-		System.out.println("Quieres buscar la siguiente a? y / n ");
-		String buscar = sc.next();
+		boolean salir = false;
+		int posicionEncontrada = -1;
 		
-	}	
+		System.out.println("Introduzca la cadena a buscar: ");
+		String cadenaBuscada = sc.nextLine();
 		
+		while(!salir) {
+			posicionEncontrada = cadena.toLowerCase().indexOf(cadenaBuscada.toLowerCase(), posicionEncontrada+1);
+			if(posicionEncontrada!=-1) {
+				System.out.println(cadena.substring(posicionEncontrada));
+				System.out.println("Buscar siguiente? y / n");
+				String respuesta = sc.nextLine();
+				if(respuesta.toLowerCase().equals("n")) {
+					salir = true;
+					}
+				} else {
+				System.out.println("No se encuentran más ocurrencias de la cadena");
+				salir = true;
+				}	
+		}	sc.close();
+	}
+		
+	public static void reemplazar() {
+		// dada una cadena, pregunta al usuario la subcadena a buscar y reemplaza
+		// mientras el usuario quiera
+				Scanner sc = new Scanner(System.in);
+				String cadena="hola, hola, hola, adios";
+				boolean salir = false;
+				int posicionEncontrada = -1;
+				
+				System.out.println("Introduzca la cadena a buscar: ");
+				String cadenaBuscada = sc.nextLine();
+				
+				System.out.println("Introduzca la cadena a reemplazar: ");
+				String cadenaReemplazar = sc.nextLine();
+				
+				while(!salir) {
+					posicionEncontrada = cadena.toLowerCase().indexOf(cadenaBuscada.toLowerCase(), posicionEncontrada+1);
+					if(posicionEncontrada!=-1) {
+						System.out.println(cadena.substring(posicionEncontrada));
+						System.out.println("Reemplazar y buscar siguiente? y / n");
+						String respuesta = sc.nextLine();
+						if(respuesta.toLowerCase().equals("n")) {
+							salir = true;
+							} else {
+								cadena = cadena.replaceFirst(cadenaBuscada, cadenaReemplazar);
+							}
+						} else {
+						System.out.println("No se encuentran más ocurrencias de la cadena");
+						salir = true;
+						}	
+				}	
+				System.out.println("La cadena ha quedado: " + cadena);
+				sc.close();
+			}
+	
+	public static void ejemplosCondicionalesListas() {
+			
+		List<String> meses = new ArrayList<String>(Arrays.asList("Enero", "febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"));
+		
+		//borrar elementos con más de 7 letras		
+		meses.removeIf(e->e.length()>6);
+		System.out.println(meses);
+		
+		//retain All
+		meses = new ArrayList<String>(Arrays.asList("Enero", "febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"));
+		List<String> subconjunto = new ArrayList<String>(Arrays.asList("Julio", "Agosto"));
+		//Quedarse con los elementos con menos de 7
+		meses.retainAll(subconjunto);
+		System.out.println(meses);
+		
+	}
+	
 	public static void main(String[] args) {
 	//ejemplo1();
 	//buscarlista();
-	reemplazarLista();
+	//reemplazarLista();
 	//algunasOperacionesCadenas();
 	//buscarSiguiente();
+	//reemplazar();
+	ejemplosCondicionalesListas();
 	
 	}
 }
