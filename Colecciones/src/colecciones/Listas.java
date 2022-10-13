@@ -7,6 +7,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
+
 public class Listas {
 	
 	public static void ejemplo1() {	
@@ -215,8 +216,24 @@ public class Listas {
 		List<String> subconjunto = new ArrayList<String>(Arrays.asList("Julio", "Agosto"));
 		//Quedarse con los elementos con menos de 7
 		meses.retainAll(subconjunto);
-		System.out.println(meses);
+		System.out.println(meses);	
+	}
+	
+	public static void ejercicio1() {
+
+		List<Integer> numeros = new ArrayList<Integer>(Arrays.asList(10,20,30,40,20));
+		numeros.add(50);
+		numeros.add(60);
+		//numeros.remove(1); //borra la posición del 20
+		//numeros.removeIf(n->n==20); //borra todos los 20
+		numeros.remove(numeros.indexOf(20)); //borra la primera ocurrencia donde esté el 20
+		numeros.add(1,25);
+		numeros.add(2,26);
+		numeros.sort(Collections.reverseOrder());
+		System.out.println(numeros);
 		
+		
+	
 	}
 	
 	public static void main(String[] args) {
@@ -226,7 +243,8 @@ public class Listas {
 	//algunasOperacionesCadenas();
 	//buscarSiguiente();
 	//reemplazar();
-	ejemplosCondicionalesListas();
+	//ejemplosCondicionalesListas();
+	ejercicio1();
 	
 	}
 }

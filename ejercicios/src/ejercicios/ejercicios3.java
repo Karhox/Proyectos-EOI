@@ -1,5 +1,6 @@
 package ejercicios;
 
+
 import java.util.Scanner;
 
 public class ejercicios3 {
@@ -14,7 +15,9 @@ public class ejercicios3 {
 		sc.close();
 	}
 	
+	
 	public static void main(String[] args) {
 	ejercicio1();
+	
 	}
 }
