@@ -167,7 +167,7 @@ public class funciones {
 		LocalDate fechaTextoConvertida = LocalDate.parse("2010-12-30");
 		System.out.println(fechaTextoConvertida);
 		System.out.println(LocalDate.parse("2010-12-30")); //formato AAAA-MM-DD
-		System.out.println(LocalDate.parse("27/07/2000", DateTimeFormatter.ofPattern("d/M/yyyy")));
+		System.out.println(LocalDate.parse("27/07/2000", DateTimeFormatter.ofPattern("d/M/yyyy")));//lo mas frecuente
 		System.out.println(LocalDate.parse("2010-12-30+05:00", DateTimeFormatter.ISO_DATE));
 	}
 		
